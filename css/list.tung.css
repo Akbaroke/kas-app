@@ -1,0 +1,103 @@
+.card-listTung{
+  max-width: 350px;
+  height: max-content;
+  background-color: #0000004a;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding: 20px;
+}
+
+.card-listTung > .box{
+  margin: 0 auto;
+  position: relative;
+  top: -50px;
+  text-align: center;
+}
+
+.card-listTung > .box > img{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #fff;
+  outline: 1px solid #fff;
+  cursor: pointer;
+}
+
+.card-listTung > .box > h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+
+.card-listTung > .conList{
+  max-width: 100%;
+  max-height: 290px;
+  overflow: hidden;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.card-listTung > .conList > .cardList{
+  max-width: 301px;
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 0 15px;
+  align-items: center;
+}
+
+.card-listTung > .conList > .cardList > div{
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+}
+
+.card-listTung > .conList > .cardList > div > h4{
+  color: #EA5455;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.card-listTung > .conList > .cardList > div > p{
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #EAEAEA;
+  color: #7E7E7E;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  padding: 7px 0;
+}
+
+.card-listTung > .conList > .cardList > p{
+  color: #7E7E7E;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  position: relative;
+  bottom: -13px;
+}
+
+.card-listTung > .conList > .cardList{
+  transition: .3s;
+  cursor: pointer;
+}
+.card-listTung > .conList > .cardList:hover{
+  transition: .3s;
+  transform: scale(1.02);
+  box-shadow: -1px 1px 4px #727272;
+}

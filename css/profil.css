@@ -1,0 +1,120 @@
+.container3{
+  max-width: 450px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #212635;
+  padding-top: 30px;
+}
+
+.top-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.top-button > i,
+.top-button > a > i{
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.card-profil {
+  max-width: 350px;
+  height: 395px;
+  background-color: #0000004a;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 90px;
+}
+
+.card-profil > div{
+  margin: 0 auto;
+  position: relative;
+  top: -50px;
+  text-align: center;
+}
+
+.card-profil .fotoProfil {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #fff;
+  outline: 1px solid #fff;
+  cursor: pointer;
+}
+
+.card-profil > div > h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.card-profil > form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+
+.card-profil > form > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3px;
+}
+
+.card-profil label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500px;
+  color: #fff;
+}
+
+.card-profil input{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  width: 244px;
+  height: 33px;
+  padding: 10px;
+  text-align: center;
+  color: #000;
+  font-size: 12px;
+  background-color: #D9D9D9;
+  border-radius: 5px;
+  border: none;
+}
+
+.card-profil > form > a{
+  color: #fff;
+  font-size: 10px;
+  font-weight: 300;
+  position: relative;
+  top: -10px;
+  left: -78px;
+}
+
+.card-profil > form > button{
+  display: block;
+  width: 126px;
+  height: 28px;
+  color: #fff;
+  background-color: #08779A;
+  border-radius: 5px;
+  border: none;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.card-profil > form > button:hover{
+  box-shadow: 0 0 4px #d9d9d934;
+  transition: .3s;
+  transform: scale(1.02);
+}

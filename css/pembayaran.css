@@ -1,0 +1,288 @@
+.card-Carabayar{
+  max-width: 350px;
+  height: max-content;
+  background-color: #0000004a;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-Carabayar > .box{
+  margin: 0 auto;
+  position: relative;
+  top: -50px;
+  text-align: center;
+}
+
+.card-Carabayar > .box > img{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #fff;
+  outline: 1px solid #fff;
+  cursor: pointer;
+}
+
+.card-Carabayar > .box > h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.card-Carabayar > .con-cara{
+  margin-top: -35px;
+  margin-bottom: 20px;
+}
+
+
+.card-Carabayar > .con-cara > h3{
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: capitalize;
+  margin-bottom: 18px;
+}
+
+.card-Carabayar > .con-cara > .cara{
+  text-align: start;
+  max-width: 280px;
+  margin: 0 auto;
+  height: max-content;
+}
+
+.card-Carabayar > .con-cara > .cara > li{
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+  position: relative;
+  left: -10px;
+}
+
+.card-Carabayar > .con-cara > .cara > p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #fff;
+  text-align: start;
+  line-height: 15px;
+  letter-spacing: 0.1px;
+  max-width: 260px;
+  margin: 0 auto;
+  margin-top: 3px;
+  position: relative;
+  right: -2px;
+}
+
+.card-Carabayar > .con-cara > .tujuan{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.card-Carabayar > .con-cara > .tujuan > div{
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 10px;
+}
+
+.card-Carabayar > .con-cara > .tujuan .nmr {
+  color: #00E4FF;
+  text-align: start;
+}
+
+.card-Carabayar > .con-cara > .tujuan .hrg {
+  color: #EA5455;
+  text-align: start;
+}
+
+
+.card-Carabayar > .con-cara > .btn-verif{
+  display: block;
+  width: 150px;
+  height: 28px;
+  align-items: center;
+  background-color: #089A7C;
+  color: #fff;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: -2px 2px 4px #89898940;
+  border-radius: 5px;
+  padding: 6px 0;
+  transition: .3s;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.card-Carabayar > .con-cara > .btn-verif:hover{
+  transition: .3s;
+  transform: scale(1.02);
+}
+
+
+/* card Verifikasi */
+.card-verifikasi{
+  display: none;
+  max-width: 350px;
+  height: max-content;
+  background-color: #0000004a;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-verifikasi > .box{
+  margin: 0 auto;
+  position: relative;
+  top: -50px;
+  text-align: center;
+}
+
+.card-verifikasi > .box > img{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #fff;
+  outline: 1px solid #fff;
+  cursor: pointer;
+}
+
+.card-verifikasi > .box > h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.card-verifikasi > form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.card-verifikasi > form > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3px;
+}
+
+.card-verifikasi label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500px;
+  color: #fff;
+  text-align: start;
+}
+
+.card-verifikasi select,
+.card-verifikasi input{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  width: 244px;
+  height: 33px;
+  padding: 8px 10px;
+  text-align: start;
+  color: #000;
+  font-size: 12px;
+  background-color: #D9D9D9;
+  border-radius: 5px;
+  border: none;
+}
+
+#metode{
+  cursor: pointer;
+}
+
+.card-verifikasi .op-metode{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-align: start;
+}
+
+#selectedBanner > img {
+  border-radius: 5px;
+  border: 5px solid #D9D9D9;
+}
+
+.bukti{
+  position: relative;
+  left: -64px;
+}
+
+#img-bukti{
+  width: 115px;
+  height: 45px;
+  background: transparent;
+  position: relative;
+  top: -5px;
+}
+
+#img-bukti::-webkit-file-upload-button {
+  visibility: hidden;
+}
+#img-bukti::before {
+  content: 'Pilih Gambar';
+  font-family: 'Roboto', sans-serif;
+  display: inline-block;
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 9px 12px;
+  outline: none;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 500;
+  font-size: 10pt;
+  background: #D9D9D9;
+}
+#img-bukti:hover::before {
+  border-color: black;
+}
+#img-bukti:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.card-verifikasi > form > button{
+  display: block;
+  width: 126px;
+  height: 28px;
+  background-color: #089A7C;
+  border-radius: 5px;
+  transition: .3s;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.card-verifikasi > form > button >span{
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+.card-verifikasi > form > button:hover{
+  transition: .3s;
+  transform: scale(1.03);
+  box-shadow: -2px 2px 4px #89898940;
+}

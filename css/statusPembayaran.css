@@ -1,0 +1,188 @@
+.card-statusPembayaran{
+  max-width: 354px;
+  height: max-content;
+  background-color: #0000004a;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding: 20px;
+}
+
+.card-statusPembayaran > h3{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #fff;
+}
+
+.card-statusPembayaran > .box {
+  display: flex;
+  flex-direction: row;
+  gap: 9px;
+  padding: 9px 0;
+  border-bottom: 1px solid #fff;
+}
+
+.card-statusPembayaran > .box > img{
+  width: 35px;
+  height: 35px;
+}
+
+.card-statusPembayaran > .box > div{
+  display: flex;
+  flex-direction: column;
+}
+
+.card-statusPembayaran > .box > div > h4{
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #fff;
+}
+
+.card-statusPembayaran > .box > div > p{
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #fff;
+}
+
+.statusPem-belum,
+.statusPem-lunas{
+  max-width: 312px;
+  max-height: 290px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.statusPem-belum > h4,
+.statusPem-lunas > h4{
+  color: #fff;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 5px;
+}
+
+.statusPem-belum > .card-list,
+.statusPem-lunas > .card-list{
+  max-width: 312px;
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 0 15px;
+}
+
+.statusPem-belum > .card-list > div,
+.statusPem-lunas > .card-list > div{
+  display: flex;
+  flex-direction: row;
+  gap: 9px;
+  align-items: center;
+}
+
+.statusPem-belum > .card-list > div img,
+.statusPem-lunas > .card-list > div img{
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  bottom: -4px;
+  transition: .3s;
+  background-image: url('img/profil/foto_default.jpg');
+}
+
+.statusPem-belum > .card-list > div img:hover,
+.statusPem-lunas > .card-list > div img:hover{
+  transition: .3s;
+  transform: scale(1.02);
+  box-shadow: -1px 1px 4px #727272;
+}
+
+.statusPem-belum > .card-list > div > p,
+.statusPem-lunas > .card-list > div > p{
+  display: block;
+  max-width: 160px;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.statusPem-lunas > .card-list > .labelPem{
+  width: 66px;
+  height: 20px;
+  background-color: #212635;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  bottom: -32px;
+  right: -5px;
+  padding: 2px 0;
+}
+
+.statusPem-belum > .card-list > .labelPem{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.statusPem-belum > .card-list > .labelPem > h4{
+  display: block;
+  width: 91px;
+  height: 20px;
+  background-color: #212635;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  bottom: -16px;
+  right: -5px;
+  padding: 2px 0;
+}
+
+.statusPem-belum > .card-list > .labelPem > p{
+  position: relative;
+  color: #FF0000;
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  bottom: -10px;
+  right: -20px;
+}
+
+.lihatSemua{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  color: #fff;
+  padding: 5px;
+  gap: 10px;
+}
+
+.liatSemua2,
+.liatSemua1{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#iconLihat2,
+#iconLihat1 {
+  transform: rotate(90deg);
+  font-size: 10px;
+}
