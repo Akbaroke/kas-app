@@ -5,5 +5,5 @@
 
 
 <p align="center">
-  <img src="img/design/LoginPage.JGP" width="350">
+  <img src="/img/design/LoginPage.JGP" width="350">
 </p>
