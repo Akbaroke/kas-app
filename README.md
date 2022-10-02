@@ -3,4 +3,7 @@
 - jquery
 - mysql
 
-![plot](img/design/LoginPage.JGP)
+
+<p align="center">
+  <img src="img/design/LoginPage.JGP" width="350">
+</p>
