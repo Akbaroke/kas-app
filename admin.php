@@ -22,7 +22,7 @@ if(!isset($_SESSION["admin"])){
       </div>
       <div class="menu">
         <div class="cardIcon">
-          <a href=""><img src="img/icon/icon-13.png" width="71"></a>
+          <a href="admin.verifikasi.list.php"><img src="img/icon/icon-13.png" width="71"></a>
           <p>Verifikasi Kas</p>
         </div>
         <div class="cardIcon">

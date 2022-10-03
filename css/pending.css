@@ -88,3 +88,38 @@
   transform: scale(1.03);
   box-shadow: -2px 2px 4px #89898940;
 }
+
+#btn-verif{
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  justify-content: center;
+}
+
+#btn-verif a{
+  width: 126px;
+  height: 28px;
+  border-radius: 5px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  transition: .3s;
+  padding: 6px 0;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+#btn-verif a:hover{
+  transition: .3s;
+  transform: scale(1.03);
+}
+
+#btn-verif a:nth-child(1){
+  border: 1px solid #fff;
+  background-color: transparent;
+}
+#btn-verif a:nth-child(2){
+  background-color: #089A7C;
+}

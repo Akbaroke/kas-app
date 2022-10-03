@@ -1,0 +1,111 @@
+.card-admin2{
+  max-width: 350px;
+  height: 395px;
+  background-color: #0000004a;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 90px;
+}
+
+.card-admin2 > div{
+  margin: 0 auto;
+  position: relative;
+  top: -40px;
+  text-align: center;
+}
+
+.card-admin2 > div > h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.card-admin2 > .con-list{
+  max-width: 301px;
+  height: max-content;
+  margin-top: 20px;
+}
+
+.card-admin2 > .con-list > h3{
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+  text-align: start;
+  margin-bottom: 6px;
+}
+
+.card-listVerif{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  max-width: 301px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.card-listVerif:hover{
+  transition: .3s;
+  transform: scale(1.02);
+  box-shadow: -1px 1px 4px #727272;
+}
+
+.card-listVerif > div{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.card-listVerif > div > p{
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: #eaeaea;
+  color: #7E7E7E;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  padding: 7px 0;
+  border-radius: 50%;
+}
+
+.card-listVerif > div > div{
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  gap: 3px;
+  align-items: flex-start;
+}
+
+.card-listVerif > div > div > h4{
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.card-listVerif > div > div > p {
+  color: #089A7C;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card-listVerif > p{
+  font-size: 10px;
+  font-weight: 500;
+  color: #7E7E7E;
+  position: relative;
+  bottom: -28px;
+}
