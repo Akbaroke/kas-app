@@ -7,9 +7,9 @@ $res = mysqli_query($conn, "SELECT * FROM akun");
 $admin_online = 0;
 while($row = mysqli_fetch_assoc($res)){
   $time = $row['time'];
-  $status_akun = $row['status_akun'];
+  $role = $row['role'];
   if($time > $time_now){
-    if($status_akun === 'admin'){
+    if($role === 'admin'){
       $admin_online++;
     }
   }

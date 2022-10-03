@@ -165,7 +165,7 @@
 .cardHome-4:hover{
   transition: .3s;
   transform: scale(1.02);
-  box-shadow: -2px 2px 4px #3a3a3aa6;
+  box-shadow: 2px 2px 4px #3a3a3aa6;
 }
 
 .cardHome-4 > h3{
@@ -300,4 +300,47 @@
 .cardHome-5 > .box > .button:hover{
   transition: .3s;
   transform: scale(1.02);
+}
+
+
+.cardHome-6{
+  max-width: 350px;
+  height: 83px;
+  background-color: #0000004a;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 10px 20px;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 14px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.cardHome-6:hover{
+  transition: .3s;
+  transform: scale(1.02);
+  box-shadow: 2px 2px 4px #3a3a3aa6;
+}
+
+.cardHome-6 > div {
+  display: flex;
+  flex-direction: row;
+  gap: 9px;
+  align-items: center;
+}
+
+.cardHome-6 > i{
+  font-size: 17px;
+  color: #fff;
+}
+
+.cardHome-6 > div > h4 {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
 }

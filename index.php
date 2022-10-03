@@ -123,6 +123,19 @@ unset($_SESSION["bayar"]);
         <?php
       }
     }
+    $status = $profil['role'];
+    if($status === 'admin'){
+      $_SESSION["admin"] = true;
+      ?>
+        <div class="cardHome-6">
+          <div>
+            <img src="img/icon/icon-12.png" alt="icon" width="35">
+            <h4>Admin Menu</h4>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      <?php
+    }
     ?>
   </div>
 <?php

@@ -202,7 +202,10 @@ setInterval(function () {
 
 
 $('.cardHome-4').on('click',()=>{
-  window.location.href = 'status.akun.php';
+  window.location.href = 'status.pembayaran.php';
+})
+$('.cardHome-6').on('click',()=>{
+  window.location.href = 'admin.php';
 })
 
 

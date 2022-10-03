@@ -1,0 +1,57 @@
+.card-admin{
+  max-width: 350px;
+  height: 395px;
+  background-color: #0000004a;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 90px;
+}
+
+.card-admin > div{
+  margin: 0 auto;
+  position: relative;
+  top: -40px;
+  text-align: center;
+}
+
+.card-admin > div > h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.card-admin > .menu{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 220px;
+  justify-content: center;
+  gap: 33px 46px;
+  margin-top: 40px;
+}
+
+.card-admin > .menu > .cardIcon{
+  width: 80px;
+  height: max-content;
+}
+
+.card-admin > .menu > .cardIcon img{
+  width: 71px;
+  height: 71px;
+  transition: .3s;
+}
+
+.card-admin > .menu > .cardIcon img:hover{
+  transition: .3s;
+  transform: scale(1.03);
+  box-shadow: 2px 2px 4px #ffffff40;
+}
+
+.card-admin > .menu > .cardIcon > p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+}

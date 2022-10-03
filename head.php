@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/list.tung.css">
   <link rel="stylesheet" href="css/pembayaran.css">
   <link rel="stylesheet" href="css/pending.css">
+  <link rel="stylesheet" href="css/admin.css">
 
   <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

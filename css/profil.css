@@ -18,6 +18,13 @@
   color: #fff;
   font-size: 30px;
   cursor: pointer;
+  transition: .3s;
+}
+
+.top-button > i:hover,
+.top-button > a > i:hover{
+  transform: scale(1.05);
+  transition: .3s;
 }
 
 .card-profil {
@@ -32,7 +39,7 @@
 .card-profil > div{
   margin: 0 auto;
   position: relative;
-  top: -50px;
+  top: -40px;
   text-align: center;
 }
 
