@@ -23,10 +23,6 @@ while($data = mysqli_fetch_array($tb_akun)) {
   }
   $bnyak_user++;
 }
-
-echo $lunas;
-echo $blm_bayar;
-
 ?>
 
 

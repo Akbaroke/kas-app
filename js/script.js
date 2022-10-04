@@ -333,11 +333,18 @@ $('.card-listVerif').on('click',function(){
   window.location.href = 'get.verifikasi.php?id='+dataId;
 })
 
+// handel klik Jadwal Tagihan info
+$('.card-listJadwal').on('click',function(){
+  const dataId = $(this).attr('data-id');
+  window.location.href = 'admin.setting.info.php?id='+dataId;
+})
+
 // handel klik Verifikasi Pembayaran
 $('.btn-verif').on('click',()=>{
   $('.card-Carabayar').css('display', 'none')
   $('.card-verifikasi').css('display', 'block')
 })
+
 
 // preview upload bukti ss
 var selDiv = "";
