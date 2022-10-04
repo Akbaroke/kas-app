@@ -22,6 +22,7 @@ $row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM riwayat_pembayaran 
 // get id user dan nominal
 $id_user = $row['id_akun'];
 $nominal = $row['nominal'];
+$fotoBukti = $row['bukti'];
 
 
 // update banyak_tunggakan (tb_akun) (junggakan_awal - 1)
@@ -47,8 +48,12 @@ mysqli_query($conn, "DELETE FROM list_tunggakan WHERE id='$id_tunggakan'");
 // update tb riwayat_pembayaran (status_pem) (berhasil)
 // update tb riwayat_pembayaran (tindakan) (terima)
 // update tb riwayat_pembayaran (id_petugas) (id_admin)
-mysqli_query($conn, "UPDATE riwayat_pembayaran SET status_pem='berhasil', tindakan='terima', id_petugas='$id_admin' WHERE id='$id_pembayaran' ");
+// update tb riwayat_pembayaran (bukti) (dihapus)
+mysqli_query($conn, "UPDATE riwayat_pembayaran SET bukti='dihapus', status_pem='berhasil', tindakan='terima', id_petugas='$id_admin' WHERE id='$id_pembayaran' ");
 
+
+// hapus foto bukti pembayaran 
+unlink('img/buktiPembayaran/' . $fotoBukti);
 
 
 // update tb_total (saldo) (saldo + nominal) 

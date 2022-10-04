@@ -76,7 +76,7 @@ $countLunas = 40 - $tb_tagihan['jumlah_tagihan'];
           <div class="card-list">
             <div>
               <a href="<?=$data1['foto']?>" data-lightbox="work"><img src="<?=$data1['foto']?>" width="35"></a>
-              <p><?=$data1['nama']?></p>
+              <p><?=strtolower($data1['nama'])?></p>
             </div>
             <div class="labelPem">
               <p>-Rp <?= number_format($data1['total_tagihan'], 0, ',', '.'); ?></p>

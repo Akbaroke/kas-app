@@ -2,6 +2,8 @@
 require "connect.php";
 $id = $_SESSION["id"];
 
+// Set lokasi
+date_default_timezone_set("Asia/Jakarta");
 
 function edit($data){
   global $conn;
@@ -98,6 +100,7 @@ function verifikasi($data){
   // get tgl_tagihan
   $row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM list_tunggakan WHERE id_akun='$id' AND id='$id_tunggakan' "));
   $tgl_tagihan = $row['tanggal_tagihan'];
+  $nominal = $row['nominal'];
 
   // upload gambar
   $foto = upload();
@@ -106,8 +109,8 @@ function verifikasi($data){
   }
 
   // query insert data
-  $query = "INSERT INTO riwayat_pembayaran VALUES ('','$id','$id_tunggakan','$tgl_tagihan','$time','5000','$nama','$metode','$foto','pending')";
-  mysqli_query($conn, $query);
+  mysqli_query($conn, "INSERT INTO riwayat_pembayaran VALUES ('','$id','$id_tunggakan','$tgl_tagihan','$time','$nominal','$nama','$metode','$foto','pending','','')");
+
 
   echo "<div class='alert' data-alert='successVerif'></div>";
 }

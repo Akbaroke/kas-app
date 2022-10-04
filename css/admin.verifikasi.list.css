@@ -1,6 +1,6 @@
 .card-admin2{
   max-width: 350px;
-  height: 395px;
+  height: max-content;
   background-color: #0000004a;
   border-radius: 5px;
   margin: 0 auto;

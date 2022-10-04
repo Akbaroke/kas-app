@@ -175,7 +175,7 @@ $('#btn-verif a:nth-child(2)').on('click', function () {
         position: 'center',
         icon: 'success',
         title: 'Yeay!',
-        text: "Anda berhasil keluar.",
+        text: "Pembayaran Berhasil diterima!",
         showConfirmButton: true,
         confirmButtonColor: "#089A7C",
         confirmButtonText: 'Okay',
@@ -188,33 +188,33 @@ $('#btn-verif a:nth-child(2)').on('click', function () {
 });
 
 // Verif Tolak
-// $('#btn-verif a:nth-child(1)').on('click', function () {
-//   Swal.fire({
-//     title: 'Yakin ingin keluar ?',
-//     text: "Semua sesi Anda yang tersimpan akan dihapus",
-//     icon: 'question',
-//     showCancelButton: true,
-//     confirmButtonColor: '#089A7C',
-//     cancelButtonColor: '#EA5455',
-//     confirmButtonText: 'Keluar',
-//     cancelButtonText: 'Batal',
-//   }).then((result) => {
-//     if (result.isConfirmed) {
-//       Swal.fire({
-//         position: 'center',
-//         icon: 'success',
-//         title: 'Yeay!',
-//         text: "Anda berhasil keluar.",
-//         showConfirmButton: true,
-//         confirmButtonColor: "#089A7C",
-//         confirmButtonText: 'Okay',
-//       })
-//       setTimeout(function(){
-//         window.location.href = 'logout.php';
-//       },1200);
-//     }
-//   })
-// });
+$('#btn-verif a:nth-child(1)').on('click', function () {
+  Swal.fire({
+    title: 'Yakin ingin Tolak ?',
+    text: "Data dan bukti pembayaran akan terHapus dari database !",
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#089A7C',
+    cancelButtonColor: '#EA5455',
+    confirmButtonText: 'Ya, Hapus',
+    cancelButtonText: 'Batal',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Yeay!',
+        text: "Pembayaran Berhasil ditolak!",
+        showConfirmButton: true,
+        confirmButtonColor: "#089A7C",
+        confirmButtonText: 'Okay',
+      })
+      setTimeout(function(){
+        window.location.href = 'admin.verifikasi.tolak.php';
+      },1200);
+    }
+  })
+});
 
 
 
