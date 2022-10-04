@@ -64,6 +64,21 @@ $s_masuk_akhir = $s_masuk_awal + $nominal;
 mysqli_query($conn, "UPDATE total SET saldo='$saldo_akhir', s_masuk='$s_masuk_akhir' WHERE id=1 ");
 
 
+// update jumlah_tagihan dan nominal_tagihan dari tabel tagihan
+// get tgl_tagihan
+$tanggal_tagihan = $row['tgl_tagihan'];
+
+$tb_tagihan = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM tagihan WHERE tanggal='$tanggal_tagihan' "));
+$jumlah_tagihan_akhir = $tb_tagihan['jumlah_tagihan'] -  1;
+$nominal_tagihan_akhir = $tb_tagihan['nominal_tagihan'] -  $nominal;
+
+
+mysqli_query($conn, "UPDATE tagihan SET jumlah_tagihan='$jumlah_tagihan_akhir', nominal_tagihan='$nominal_tagihan_akhir' WHERE tanggal='$tanggal_tagihan' ");
+
+
+
+
+
 
 
 // insert tb riwayat_saldokas (nominal, jenis="masuk", ket="uang kas mingguan", tanggal=time_now)

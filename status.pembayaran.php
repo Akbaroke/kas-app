@@ -60,8 +60,11 @@ $countLunas = 40 - $tb_tagihan['jumlah_tagihan'];
     ?>
 
     <?php if ($tb_tagihan['jumlah_tagihan'] == 0){
-      echo 'kosong';
-      exit;
+        ?>
+          <div class="statusPem-belum">
+            <h4>Belum Lunas <?=$tb_tagihan['jumlah_tagihan']?> Orang</h4>
+          </div>
+        <?php
     }else{
       ?>
       <div class="statusPem-belum">
