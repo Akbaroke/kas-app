@@ -8,6 +8,8 @@ const alert6 = $('.alert').data('successVerif');
 const alert7 = $('.alert').data('errorUpload1');
 const alert8 = $('.alert').data('errorUpload2');
 const alert9 = $('.alert').data('errorUpload3');
+const alert10 = $('.alert').data('errorNominal');
+const alert11 = $('.alert').data('successJadwal');
 
 if(alert === 'error'){
   Swal.fire({
@@ -129,6 +131,31 @@ else if(alert === 'errorUpload3'){
     confirmButtonColor: "#212635",
   })
 }
+else if(alert === 'errorNominal'){
+  Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Oppss...',
+    text: "Nominal harus berupa angka!",
+    showConfirmButton: true,
+    timer: 5000,
+    confirmButtonColor: "#212635",
+  })
+}
+else if(alert === 'successJadwal'){
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Succses',
+    text: "Jadwal Tagihan Kas Berhasil di tambahkan !",
+    showConfirmButton: true,
+    timer: 2000,
+    confirmButtonColor: "#212635",
+  })
+  setTimeout(function(){
+    window.location.href = 'admin.setting.list.php';
+  },2000);
+}
 
 $('#logout').on('click', function () {
   Swal.fire({
@@ -215,6 +242,7 @@ $('#btn-verif a:nth-child(1)').on('click', function () {
     }
   })
 });
+
 
 
 

@@ -77,6 +77,11 @@
   padding: 0 15px;
 }
 
+.statusPem-belum > .card-list:nth-last-child(1),
+.statusPem-lunas > .card-list:nth-last-child(1){
+  margin-bottom: 0px;
+}
+
 .statusPem-belum > .card-list > div,
 .statusPem-lunas > .card-list > div{
   display: flex;

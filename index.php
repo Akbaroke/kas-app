@@ -12,10 +12,20 @@ $tb_total = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM total WHERE id
 
 $tb_riwayatPem = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM riwayat_pembayaran WHERE id_akun='$id' AND status_pem='pending' "));
 
-$tb_tagihan = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM tagihan  ORDER BY id DESC LIMIT 1;"));
-$countLunas = 40 - $tb_tagihan['jumlah_tagihan'];
+$tb_tagihan = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM jadwal_tagihan  ORDER BY id DESC LIMIT 1;"));
+
+// menghitung jumlah yang blm lunas
+$tb_akun = mysqli_query($conn, "SELECT * FROM akun");
+$blm_bayar = 0;
+while($data = mysqli_fetch_array($tb_akun)) {
+  // cek banyak user yang belum bayar
+  if($data['banyak_tunggakan'] > 0){
+    $blm_bayar++;
+  }
+}
 
 unset($_SESSION["bayar"]);
+unset($_SESSION["admin"]);
 
 
 ?>
@@ -67,7 +77,7 @@ unset($_SESSION["bayar"]);
         <div>
           <img src="img/icon/icon-3.png" alt="icon" width="35">
           <div>
-            <h4><?=$tb_tagihan['jumlah_tagihan']?></h4>
+            <h4><?=$blm_bayar?></h4>
             <p>Belum melunasi, Update Pertanggal <?=$tb_tagihan['tanggal'];?></p>
           </div>
         </div>

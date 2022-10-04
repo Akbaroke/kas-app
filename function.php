@@ -114,3 +114,43 @@ function verifikasi($data){
 
   echo "<div class='alert' data-alert='successVerif'></div>";
 }
+
+
+function jadwalTagihan($data){
+  global $conn;
+
+  $tanggal = htmlspecialchars($data["tanggal"]);
+  $nominal = htmlspecialchars($data["nominal"]);
+
+  // ubah value tanggal
+  $split_tgl = explode("-", $tanggal);
+  $thn = $split_tgl[0];
+  $bln = $split_tgl[1];
+  $tgl = $split_tgl[2];
+  $tanggal = $tgl."/".$bln."/".$thn;
+
+  // update tb_akun (banyak_tunggakan + 1) (total_tagihan + nominal)
+  $tb_akun = mysqli_query($conn, "SELECT * FROM akun");
+  $jumlah_user = 0;
+  while($data = mysqli_fetch_array($tb_akun)) {
+    $id_akun = $data['id'];
+    $banyak_tunggakan = $data['banyak_tunggakan']+1;
+    $total_tagihan = $data['total_tagihan']+$nominal;
+    mysqli_query($conn, "UPDATE akun SET banyak_tunggakan='$banyak_tunggakan', total_tagihan='$total_tagihan' WHERE id='$id_akun' ");
+    $jumlah_user++;
+  }
+  
+
+  // insert tb jadwal_tagihan 
+  mysqli_query($conn, "INSERT INTO jadwal_tagihan VALUES ('','$tanggal','$nominal','$jumlah_user')");
+
+
+  // insert tb list_tunggakan
+  $id_akun = 1;
+  while($id_akun <= $jumlah_user) {
+    mysqli_query($conn, "INSERT INTO list_tunggakan VALUES ('','$id_akun','$nominal','$tanggal')");
+    $id_akun++;
+  }
+
+  echo "<div class='alert' data-alert='successJadwal'></div>";
+}

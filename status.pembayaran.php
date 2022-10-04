@@ -6,12 +6,26 @@ include "session_cek.php";
 $id = $_SESSION["id"];
 $profil = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM akun WHERE id = '$id'"));
 
-$tb_tagihan = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM tagihan  ORDER BY id DESC LIMIT 1;"));
+$tb_tagihan = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM jadwal_tagihan  ORDER BY id DESC LIMIT 1;"));
 
 
-$tb_akun = mysqli_query($conn, "SELECT * FROM akun"); 
-$tb_akun1 = mysqli_query($conn, "SELECT * FROM akun"); 
-$countLunas = 40 - $tb_tagihan['jumlah_tagihan'];
+// cek lunas dan blm lunas
+$tb_akun = mysqli_query($conn, "SELECT * FROM akun");
+$blm_bayar = 0;
+$lunas = 0;
+$bnyak_user = 0;
+while($data = mysqli_fetch_array($tb_akun)) {
+  // cek banyak user yang belum bayar
+  if($data['banyak_tunggakan'] > 0){
+    $blm_bayar++;
+  }else{
+    $lunas++;
+  }
+  $bnyak_user++;
+}
+
+echo $lunas;
+echo $blm_bayar;
 
 ?>
 
@@ -25,20 +39,27 @@ $countLunas = 40 - $tb_tagihan['jumlah_tagihan'];
       <div class="box">
         <img src="img/icon/icon-3.png" width="35">
         <div>
-          <h4><?=$tb_tagihan['jumlah_tagihan']?></h4>
-          <p>Belum melunasi, Update Pertanggal <?=$tb_tagihan['tanggal'];?></p>
+          <h4><?=$bnyak_user?></h4>
+          <p>Update Pertanggal <?=$tb_tagihan['tanggal'];?></p>
         </div>
       </div>
-    <?php if ($countLunas == 0){
-      exit;
+    <?php if ($lunas == 0){
+      ?>
+        <!-- <div class="statusPem-belum">
+          <h4>Lunas <?=$lunas?> Orang</h4>
+        </div> -->
+      <?php
     }else{
       ?>
       <div class="statusPem-lunas">
-        <h4>Lunas <?=$countLunas?> Orang</h4>
+        <h4>Lunas <?=$lunas?> Orang</h4>
       <?php
+      $tb_akun = mysqli_query($conn, "SELECT * FROM akun");
       while($data = mysqli_fetch_array($tb_akun)) {
-        if($data['banyak_tunggakan'] == 0){
-        ?>
+        // cek banyak user yang belum bayar
+        if($data['banyak_tunggakan'] > 0){
+        }else{
+          ?>
           <div class="card-list">
             <div>
               <a href="<?=$data['foto']?>" data-lightbox="work"><img src="<?=$data['foto']?>" width="35"></a>
@@ -46,52 +67,63 @@ $countLunas = 40 - $tb_tagihan['jumlah_tagihan'];
             </div>
             <h4 class="labelPem">Lunas</h4>
           </div>
-        <?php
-        }
-      } 
-      ?>
-      </div>
-      <div class="lihatSemua">
-        <i id="iconLihat1" class="fa-solid fa-angle-left"></i>
-        <p class="liatSemua1">Lihat semua</p>
-      </div>
-    <?php
-    }
-    ?>
-
-    <?php if ($tb_tagihan['jumlah_tagihan'] == 0){
-        ?>
-          <div class="statusPem-belum">
-            <h4>Belum Lunas <?=$tb_tagihan['jumlah_tagihan']?> Orang</h4>
-          </div>
-        <?php
-    }else{
-      ?>
-      <div class="statusPem-belum">
-        <h4>Belum Lunas <?=$tb_tagihan['jumlah_tagihan']?> Orang</h4>
-      <?php
-      while($data1 = mysqli_fetch_array($tb_akun1)) {
-        if($data1['banyak_tunggakan'] > 0){
-        ?>
-          <div class="card-list">
-            <div>
-              <a href="<?=$data1['foto']?>" data-lightbox="work"><img src="<?=$data1['foto']?>" width="35"></a>
-              <p><?=strtolower($data1['nama'])?></p>
-            </div>
-            <div class="labelPem">
-              <p>-Rp <?= number_format($data1['total_tagihan'], 0, ',', '.'); ?></p>
-              <h4>Belum Lunas</h4>
-            </div>
-          </div>
-        <?php
+          <?php
         }
       }
       ?>
       </div>
-      <div class="lihatSemua">
-        <i id="iconLihat2" class="fa-solid fa-angle-left"></i>
-        <p class="liatSemua2">Lihat semua</p>
+      <?php if($lunas > 5){
+        ?>
+          <div class="lihatSemua">
+            <i id="iconLihat1" class="fa-solid fa-angle-left"></i>
+            <p class="liatSemua1">Lihat semua</p>
+          </div>
+        <?php
+      } ?>
+    <?php
+    }
+    ?>
+
+    <?php if ($blm_bayar == 0){
+        ?>
+          <!-- <div class="statusPem-belum">
+            <h4>Belum Lunas <?=$blm_bayar?> Orang</h4>
+          </div> -->
+        <?php
+    }else{
+      ?>
+      <div class="statusPem-belum">
+        <h4>Belum Lunas <?=$blm_bayar?> Orang</h4>
+      <?php
+      $tb_akun = mysqli_query($conn, "SELECT * FROM akun");
+      while($data = mysqli_fetch_array($tb_akun)) {
+        // cek banyak user yang belum bayar
+        if($data['banyak_tunggakan'] > 0){
+          ?>
+          <div class="card-list">
+            <div>
+              <a href="<?=$data['foto']?>" data-lightbox="work"><img src="<?=$data['foto']?>" width="35"></a>
+              <p><?=strtolower($data['nama'])?></p>
+            </div>
+            <div class="labelPem">
+              <p>-Rp <?= number_format($data['total_tagihan'], 0, ',', '.'); ?></p>
+              <h4>Belum Lunas</h4>
+            </div>
+          </div>
+          <?php
+        }else{
+        }
+      }
+      ?>
       </div>
+      <?php if($blm_bayar > 5){
+        ?>
+          <div class="lihatSemua">
+            <i id="iconLihat2" class="fa-solid fa-angle-left"></i>
+            <p class="liatSemua2">Lihat semua</p>
+          </div>
+        <?php
+      } ?>
     <?php
     }
     ?>

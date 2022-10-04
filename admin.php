@@ -26,7 +26,7 @@ if(!isset($_SESSION["admin"])){
           <p>Verifikasi Kas</p>
         </div>
         <div class="cardIcon">
-          <a href=""><img src="img/icon/icon-14.png" width="71"></a>
+          <a href="admin.setting.list.php"><img src="img/icon/icon-14.png" width="71"></a>
           <p>Setting Jadwal</p>
         </div>
         <div class="cardIcon">

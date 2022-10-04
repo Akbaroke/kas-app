@@ -38,6 +38,7 @@
   margin-bottom: 6px;
 }
 
+.card-listJadwal,
 .card-listVerif{
   display: flex;
   flex-direction: row;
@@ -52,12 +53,14 @@
   cursor: pointer;
 }
 
+.card-listJadwal:hover,
 .card-listVerif:hover{
   transition: .3s;
   transform: scale(1.02);
   box-shadow: -1px 1px 4px #727272;
 }
 
+.card-listJadwal > div,
 .card-listVerif > div{
   display: flex;
   flex-direction: row;
@@ -66,6 +69,7 @@
   justify-content: flex-start;
 }
 
+.card-listJadwal > div > p,
 .card-listVerif > div > p{
   display: block;
   width: 40px;
@@ -79,6 +83,7 @@
   border-radius: 50%;
 }
 
+.card-listJadwal > div > div,
 .card-listVerif > div > div{
   display: flex;
   flex-direction: column;
@@ -87,6 +92,7 @@
   align-items: flex-start;
 }
 
+.card-listJadwal > div > div > h4,
 .card-listVerif > div > div > h4{
   font-family: 'Roboto', sans-serif;
   color: #000;
@@ -95,6 +101,7 @@
   text-transform: capitalize;
 }
 
+.card-listJadwal > div > div > p ,
 .card-listVerif > div > div > p {
   color: #089A7C;
   font-size: 12px;
@@ -102,10 +109,37 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.card-listJadwal > p,
 .card-listVerif > p{
   font-size: 10px;
   font-weight: 500;
   color: #7E7E7E;
   position: relative;
   bottom: -28px;
+}
+
+#buat-tagihan{
+  display: block;
+  position: relative;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  top: -9px;
+  right: -220px;
+  border: 1px solid #fff;
+  width: 100px;
+  height: 32px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 7px 0;
+  cursor: pointer;
+  transition: .3s;
+  background-color: #181B26;
+}
+
+#buat-tagihan:hover{
+  transition: .3s;
+  background-color: #fff;
+  color: #000;
 }
