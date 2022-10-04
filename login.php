@@ -41,7 +41,7 @@ if (isset($_POST["login"])) {
 ?>
 
   <div class="container">
-    <h1>MANAGEMENT UANG KAS TI.21.C4</h1>
+    <h1>MANAGEMENT UANG KAS TI.21.A3</h1>
     <div class="card-login">
       <img src="img/icon/icon-1.png" alt="Login" width="100px">
       <form action="" method="post" autocomplete="off" required >

@@ -181,7 +181,7 @@ $('#btn-verif a:nth-child(2)').on('click', function () {
         confirmButtonText: 'Okay',
       })
       setTimeout(function(){
-        window.location.href = 'logout.php';
+        window.location.href = 'admin.verifikasi.terima.php';
       },1200);
     }
   })

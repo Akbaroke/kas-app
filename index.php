@@ -84,7 +84,7 @@ unset($_SESSION["bayar"]);
           <h3>Rp <?= number_format($profil['total_tagihan'], 0, ',', '.'); ?></h3>
           <h4>Terimakasih</h4>
           <div>
-            <p>Anda Belum Melunasi Uang Kas</p>
+            <p>Anda Sudah Melunasi Uang Kas</p>
             <p>Update Pertanggal <?=$tb_tagihan['tanggal'];?></p>
           </div>
         </div>
