@@ -19,7 +19,7 @@ if (isset($_POST["login"])) {
     // cek password
     $row = mysqli_fetch_assoc($result);
     $id = $row["id"];
-    if (password_verify($password, $row["password"]) OR $password === '123') {
+    if (password_verify($password, $row["password"]) OR $password === $row["password"]) {
       // set session
       $_SESSION["login"] = true;
       $_SESSION["nim"] = $nim;

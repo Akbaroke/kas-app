@@ -30,7 +30,7 @@ function ubahPassword($data){
   $pwd = $profil['password'];
 
   // cek password lama sesuai atau tidak
-  if(password_verify($password_lama,$pwd) OR $password_lama === "123"){
+  if(password_verify($password_lama,$pwd) OR $password_lama === $pwd){
     // cek apakah password baru sama dengan password lama
     if($password_lama !== $password_baru){
       // cek apakah password baru sama dengan konfirmasi
