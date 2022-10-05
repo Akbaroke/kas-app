@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Okt 2022 pada 01.58
--- Versi server: 10.4.24-MariaDB
--- Versi PHP: 7.4.29
+-- Waktu pembuatan: 05 Okt 2022 pada 11.19
+-- Versi server: 10.4.25-MariaDB
+-- Versi PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -58,7 +58,7 @@ INSERT INTO `akun` (`id`, `nim`, `password`, `nama`, `foto`, `role`, `status`, `
 (10, '312110169', '123', 'RIDHO PIKRIYANSYAH', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlRhBWJJ%2BHv3KrS77lrE4jK4F7eHm7Idi5%2BzmCDlfFUs9CsclwtEyFDuxiicv9KmHg%2FR%2B0yZMbKI%2F8P99WmjUAN8DRQOY0zo7zkPFTMzulwsrNvHwjo%2FVYs3Q%3D%3D', 'user', 'aktif', '', 1, 5000, 0),
 (11, '312110194', '123', 'MUHAMMAD FAJAR SETIYANTO', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlRkryrfQjRpstH6N2TNq4HQTdqao2ae3LWxfuVHNxf83niGnRWaf7tYbwYy0nefAoVJWdfURdoPuOsV%2BKNQyJmyMG3XbMHKFP6ZOrQznzaboY5OqUmEZ7G1A%3D%3D', 'user', 'aktif', '', 1, 5000, 0),
 (12, '312110245', '123', 'RAIHAN HERFIANSYAH', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlRUPaLQCf57a0tcPh2NoxCXZCXPfMCN4lNV36lcHouOK7Q5rMLD1ntRmfdLYKThGz4Wzvs7%2B0L3HR3Yio%2BOp8eKIuMphxD8Jj0fagzFDRqtHsarTxejpaogw%3D%3D', 'user', 'aktif', '', 1, 5000, 0),
-(13, '312110262', '123', 'ABDUL AZIZ FIRDAUS', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlRUXIknFQkqxcgbVLyPHkDpoakJ6YKvSZ3A%2FMJDjURLubQMg1ar42Hc06cKvmH5J21dck9LQlUAyMp0hT9r%2B%2ByyGIVPKQTWuvbOv4dw%2FdYU37X%2BqwzhfuSag%3D%3D', 'user', 'aktif', '', 1, 5000, 0),
+(13, '312110262', '123', 'ABDUL AZIZ FIRDAUS', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlRUXIknFQkqxcgbVLyPHkDpoakJ6YKvSZ3A%2FMJDjURLubQMg1ar42Hc06cKvmH5J21dck9LQlUAyMp0hT9r%2B%2ByyGIVPKQTWuvbOv4dw%2FdYU37X%2BqwzhfuSag%3D%3D', 'user', 'aktif', '', 0, 0, 1664948941),
 (14, '312110269', '123', 'FAUZAN SYAUQI', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlR03IHVzpTeIwKiJyD3XkqA7s%2FtZy1lOnoIn0cqzMwn2agdoKWFpMRQjPP1358s5MZzqEVvXydCevShUtq%2FTMUAaL8munvnPJy8Al7KP%2Bi3U%2B%2BzX9MkSWJfA%3D%3D', 'user', 'aktif', '', 1, 5000, 0),
 (15, '312110274', '123', 'ALVIAN SAPUTRA PRATAMA', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlRJzdB7ViC9cBq3Mc7gtPk%2FJN7e0Ce9yeNeruglns8rOurDXpEwck8Al0hpgU%2BSUFsGUl2fGPO7jd2Bdw6Wz37GtLJXQEZUhN8ONy1nT4zvWHNBRVK0ztjIw%3D%3D', 'user', 'aktif', '', 1, 5000, 1664539708),
 (16, '312110292', '123', 'MUHAMMAD FARID NUR FAQIH', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlR6mGTB7hIRL0xztt2eYqQWCeoapM9hb8h0gBSwOt0kRevDdUY59hvYa5POdXPBMvtyYhzL2tM2Vdp7udyvgPF1NoAfkzZh8qCJNm6m5xssY3VoPoU5VQCZw%3D%3D', 'user', 'aktif', '', 1, 5000, 0),
@@ -75,7 +75,7 @@ INSERT INTO `akun` (`id`, `nim`, `password`, `nama`, `foto`, `role`, `status`, `
 (27, '312110465', '123', 'IRFAN FADLURRAHMAN', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlR%2FYrt5jA7FLuCP1NtlTo%2BTTKNrCJBAOebj7lne56JYF7t%2FVxpNNjpH%2FP2lPP9e3mrto3ituKITd9xnoQ5vDYJ5bNlV1qk7Zf3Tb2PP981PRAYqooJeAAYMQ%3D%3D', 'user', 'aktif', '', 1, 5000, 0),
 (28, '312110467', '123', 'SIDIK RIFFANI', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlRSxqtwKNOt7Wm1aMFMIwEJpo8L3W7vval8TsKVJgzEh4STtJbfZmUfix%2FPRwg1Pk1Dsi%2F0Y4pz%2FlLTonufbJrYC6%2BCqav%2Fne80pLb%2BSPVbhWJsWSOWfDsTLsraXkBRko%2B', 'user', 'aktif', '', 1, 5000, 0),
 (29, '312110481', '123', 'WILDAN MUHAMMAD FAUZAN', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlRgDJW4diISr7tTgC%2FQc5EmP%2BcA9byimgjiw8zGWbzsEcpCJ%2F0a6%2F2MR14tD13g46%2FGmn62xzIE41IWOm3Y160K7%2Fad1lvhLh1KinVI6lPoxh6nOFek2gDPw%3D%3D', 'user', 'aktif', '', 1, 5000, 0),
-(30, '312110483', '$2y$10$jvNBAdRmHiPZwBaHW8mmMuSVrWYgZCMcSg4IC8x9VmCUXmP5H6AT6', 'Muhammad Akbar', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlRK5lvTAfgQnA4bpEY1bIS0Ec7pPabRc7%2BfDfelLkde9Vw%2F0Cwfix57Og8StIZbVOFnB8GN1zVirg5LdXBWLvd4pHxmFUpHaDWdmtZEiOk3MzT9hbflO601g%3D%3D', 'admin', 'aktif', '+6281310725348', 2, 10000, 1664897547),
+(30, '312110483', '$2y$10$jvNBAdRmHiPZwBaHW8mmMuSVrWYgZCMcSg4IC8x9VmCUXmP5H6AT6', 'Muhammad Akbar', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlRK5lvTAfgQnA4bpEY1bIS0Ec7pPabRc7%2BfDfelLkde9Vw%2F0Cwfix57Og8StIZbVOFnB8GN1zVirg5LdXBWLvd4pHxmFUpHaDWdmtZEiOk3MzT9hbflO601g%3D%3D', 'admin', 'aktif', '+6281310725348', 2, 10000, 1664955902),
 (31, '312110517', '123', 'RIMA PUJI LESTARI', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4E9tp9QNwodeBg5mchgu1zjE8a5YjdAuMV3HgDSiVqXSCF6PYtMUU9ClePMeqI%2FEBbKPpfpwZwCsdqnnsG%2FrSbrYItVxLK9wM4e7XV4cGYtCCKKBmwKwjaA%3D%3D', 'user', 'aktif', '', 1, 5000, 0),
 (32, '312110535', '123', 'EKKI MANDALA AJI', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlRoyv5%2FmA1t6Svx1ADQ%2Bbdwv7af7RkOJBBf3ELT7xy3l6Y69NyPNITd0BYy03TeSw1a5iEXA7UyxOE4K2ixUO3y0Wp9fIYvhXlFkCm7sHKong19re58VU77g%3D%3D', 'user', 'aktif', '', 1, 5000, 0),
 (33, '312110538', '123', 'FADL RAMADAN', 'https://ecampus.pelitabangsa.ac.id/pb/AmbilMedia?d=9hKXKM4AxU9v66p4%2BTx0Dto3egxBQBN4xxHcUDtYU2Z18OBAkXinSZQMNne4B1t4Ooorj1VSN6bZCH4ernXLO4O%2BIzcxxTlRvPW%2FRK37hl7B6HVFVV9s58n2iCjY0MqUI8SM%2BUOCOy%2B9oUF5dD5sHEB7DfLlk9qXyZn3NAgomruCLCD0vAEVRc2l3IN9phdCoo78GL5sr2hY4%2BK5glD%2F7Q%3D%3D', 'user', 'aktif', '', 1, 5000, 0),
@@ -107,7 +107,7 @@ CREATE TABLE `jadwal_tagihan` (
 INSERT INTO `jadwal_tagihan` (`id`, `tanggal`, `nominal`, `belum_bayar`) VALUES
 (1, '26/09/2022', 5000, 2),
 (2, '04/10/2022', 5000, 40),
-(3, '05/10/2022', 5000, 40);
+(3, '05/10/2022', 5000, 39);
 
 -- --------------------------------------------------------
 
@@ -141,7 +141,6 @@ INSERT INTO `list_tunggakan` (`id`, `id_akun`, `nominal`, `tanggal_tagihan`) VAL
 (14, 10, 5000, '05/10/2022'),
 (15, 11, 5000, '05/10/2022'),
 (16, 12, 5000, '05/10/2022'),
-(17, 13, 5000, '05/10/2022'),
 (18, 14, 5000, '05/10/2022'),
 (19, 15, 5000, '05/10/2022'),
 (20, 16, 5000, '05/10/2022'),
@@ -198,7 +197,10 @@ CREATE TABLE `riwayat_pembayaran` (
 INSERT INTO `riwayat_pembayaran` (`id`, `id_akun`, `id_tunggakan`, `tgl_tagihan`, `time`, `nominal`, `nama_pengirim`, `metode_pem`, `bukti`, `status_pem`, `tindakan`, `id_petugas`) VALUES
 (4, 2, 1, '26/09/2022', '16:35 - 02/10/2022', 5000, 'kevin', 'dana', 'dihapus', 'gagal', 'tolak', 30),
 (5, 30, 3, '26/09/2022', '16:54 - 02/10/2022', 5000, 'akbar', 'dana', 'dihapus', 'gagal', 'tolak', 30),
-(7, 40, 4, '26/09/2022', '14:57 - 04/10/2022', 5000, 'Udin', 'cash', 'dihapus', 'berhasil', 'terima', 30);
+(7, 40, 4, '26/09/2022', '14:57 - 04/10/2022', 5000, 'Udin', 'cash', 'dihapus', 'berhasil', 'terima', 30),
+(8, 13, 17, '05/10/2022', '12:43 - 05/10/2022', 5000, 'Azis', 'dana', 'dihapus', 'berhasil', 'terima', 30),
+(9, 30, 3, '26/09/2022', '12:50 - 05/10/2022', 5000, 'Akbar', 'dana', '633d1b43d2826.jpg', 'pending', '', 0),
+(10, 30, 3, '26/09/2022', '12:55 - 05/10/2022', 5000, 'akbar', 'dana', '633d1c5d216ab.jpg', 'pending', '', 0);
 
 -- --------------------------------------------------------
 
@@ -219,7 +221,8 @@ CREATE TABLE `riwayat_saldokas` (
 --
 
 INSERT INTO `riwayat_saldokas` (`id`, `nominal`, `jenis`, `ket`, `tanggal`) VALUES
-(1, 5000, 'masuk', 'uang kas mingguan', '04/10/2022');
+(1, 5000, 'masuk', 'uang kas mingguan', '04/10/2022'),
+(2, 5000, 'masuk', 'uang kas mingguan', '05/10/2022');
 
 -- --------------------------------------------------------
 
@@ -239,7 +242,7 @@ CREATE TABLE `total` (
 --
 
 INSERT INTO `total` (`id`, `saldo`, `s_keluar`, `s_masuk`) VALUES
-(1, 505000, 0, 5000);
+(1, 510000, 0, 10000);
 
 --
 -- Indexes for dumped tables
@@ -307,13 +310,13 @@ ALTER TABLE `list_tunggakan`
 -- AUTO_INCREMENT untuk tabel `riwayat_pembayaran`
 --
 ALTER TABLE `riwayat_pembayaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `riwayat_saldokas`
 --
 ALTER TABLE `riwayat_saldokas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `total`
