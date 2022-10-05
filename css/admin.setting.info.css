@@ -1,0 +1,168 @@
+.card-admin2 > .con-isi{
+  width: 312px;
+  height: max-content;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.con-isi > .box{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 9px;
+  margin: 0 auto;
+  border-bottom: 1px solid #fff;
+}
+
+
+.con-isi > .box > img{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.con-isi > .box > div{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  color: #fff;
+  width: 312px;
+  height: 44px;
+  margin-bottom: -1px;
+}
+
+.con-isi > div > div > h4{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.con-isi > div > div > p{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+}
+
+
+.con-isi > .con-listBelum,
+.con-isi > .con-listLunas{
+  text-align: start;
+}
+
+.con-isi > .con-listBelum > h4 ,
+.con-isi > .con-listLunas > h4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.con-isi > .con-listBelum > .card-list,
+.con-isi > .con-listLunas > .card-list{
+  max-width: 312px;
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 0 15px;
+}
+
+.con-isi > .con-listBelum > .card-list > div,
+.con-isi > .con-listLunas > .card-list > div{
+  display: flex;
+  flex-direction: row;
+  gap: 9px;
+  align-items: center;
+}
+
+.con-isi > .con-listBelum > .card-list > div > img,
+.con-isi > .con-listLunas > .card-list > div > img{
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  bottom: -4px;
+  transition: .3s;
+  background-image: url('img/profil/foto_default.jpg');
+}
+
+.con-isi > .con-listBelum > .card-list > div > img:hover,
+.con-isi > .con-listLunas > .card-list > div > img:hover{
+  transition: .3s;
+  transform: scale(1.02);
+  box-shadow: -1px 1px 4px #727272;
+}
+
+.con-isi > .con-listBelum > .card-list > div > p,
+.con-isi > .con-listLunas > .card-list > div > p{
+  display: block;
+  max-width: 170px;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.con-isi > .con-listLunas > .card-list > .labelPem{
+  width: 66px;
+  height: 20px;
+  background-color: #212635;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  bottom: -32px;
+  right: -5px;
+  padding: 2px 0;
+}
+
+
+.con-isi > .con-listBelum > .card-list > .labelPem{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+
+.con-isi > .con-listBelum > .card-list > .labelPem > h4{
+  display: block;
+  width: 91px;
+  height: 20px;
+  background-color: #212635;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  bottom: -16px;
+  right: -5px;
+  padding: 2px 0;
+}
+
+.con-isi > .con-listBelum > .card-list > .labelPem > p{
+  position: relative;
+  color: #FF0000;
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  bottom: -10px;
+  right: -20px;
+}
+
+
+.con-isi > .con-listLunas > .card-list:nth-last-child(1),
+.con-isi > .con-listBelum > .card-list:nth-last-child(1){
+  margin-bottom: 0px;
+}
+

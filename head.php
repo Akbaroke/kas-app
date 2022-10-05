@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/admin.css">
   <link rel="stylesheet" href="css/admin.verifikasi.list.css">
   <link rel="stylesheet" href="css/admin.setting.tambah.css">
+  <link rel="stylesheet" href="css/admin.setting.info.css">
 
   <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

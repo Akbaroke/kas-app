@@ -26,7 +26,7 @@ $id_jadwal_tagihan = $_GET["id"];
         <h2>Jadwal Tagihan Info</h2>
       </div>
       <div class="con-isi">
-        <div>
+        <div class="box">
           <img src="img/icon/icon-4.png" width="35">
           <div>
             <h4>Rp 100.000</h4>
@@ -37,20 +37,34 @@ $id_jadwal_tagihan = $_GET["id"];
         <div class="con-listLunas">
           <h4>Lunas 1 Orang</h4>
           <div class="card-list">
-            <a href="img/profil/foto_default.jpg" data-lightbox="work"><img src="img/profil/foto_default.jpg" width="35"></a>
-            <p><?=strtolower("Muhammad Akbar")?></p>
+            <div>
+              <a href="img/profil/foto_default.jpg" data-lightbox="work"><img src="img/profil/foto_default.jpg" width="35"></a>
+              <p><?=strtolower("Muhammad Akbar")?></p>
+            </div>
+            <h4 class="labelPem">Lunas</h4>
           </div>
-          <h4 class="labelPem">Lunas</h4>
+          <div class="lihatSemua">
+            <i id="iconLihat1" class="fa-solid fa-angle-left"></i>
+            <p class="liatSemua1">Lihat semua</p>
+          </div>
         </div>
 
         <div class="con-listBelum">
           <h4>Belum Lunas 1 Orang</h4>
           <div class="card-list">
-            <a href="img/profil/foto_default.jpg" data-lightbox="work"><img src="img/profil/foto_default.jpg" width="35"></a>
-            <p><?=strtolower("Muhammad Akbar")?></p>
+            <div>
+              <a href="img/profil/foto_default.jpg" data-lightbox="work"><img src="img/profil/foto_default.jpg" width="35"></a>
+              <p><?=strtolower("Muhammad Akbar")?></p>
+            </div>
+            <div class="labelPem">
+              <p>-Rp 5.000</p>
+              <h4>Belum Lunas</h4>
+            </div>
           </div>
-          <p>-Rp 5.000</p>
-          <h4 class="labelPem">Belum Lunas</h4>
+          <div class="lihatSemua">
+            <i id="iconLihat2" class="fa-solid fa-angle-left"></i>
+            <p class="liatSemua2">Lihat semua</p>
+          </div>
         </div>
 
       </div>
