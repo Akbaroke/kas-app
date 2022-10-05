@@ -129,6 +129,15 @@ function jadwalTagihan($data){
   $tgl = $split_tgl[2];
   $tanggal = $tgl."/".$bln."/".$thn;
 
+  // cek apakah tanggal sudah terdaftar atau belum
+  $tb_jadwal_tagihan = mysqli_query($conn, "SELECT * FROM jadwal_tagihan");
+  while($data = mysqli_fetch_array($tb_jadwal_tagihan)) {
+    if($data['tanggal'] == $tanggal){
+      echo "<div class='alert' data-alert='errorTanggal'></div>";
+      return false;
+    }
+  }
+
   // update tb_akun (banyak_tunggakan + 1) (total_tagihan + nominal)
   $tb_akun = mysqli_query($conn, "SELECT * FROM akun");
   $jumlah_user = 0;

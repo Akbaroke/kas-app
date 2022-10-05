@@ -11,20 +11,35 @@ if(!isset($_SESSION["admin"])){
 $id_jadwal_tagihan = $_GET["id"];
 $tb_jadwal_tagihan = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM jadwal_tagihan WHERE id = '$id_jadwal_tagihan'"));
 $tanggal = $tb_jadwal_tagihan["tanggal"];
+$nominal = $tb_jadwal_tagihan["nominal"];
 
-// menghitung jumlah pendapatan pertanggal
-$total = 0;
 $blm_lunas = 0;
 $tb_list_tunggakan = mysqli_query($conn, "SELECT * FROM list_tunggakan");
 while($data = mysqli_fetch_array($tb_list_tunggakan)) {
   // cek banyak user yang belum bayar
   if($data['tanggal_tagihan'] == $tanggal){
     $blm_lunas++;
-  }else{
-    $total = $total + $data['nominal'];
   }
 }
 
+// menghitung jumlah pendapatan pertanggal
+$total = 0;
+$lunas = 0;
+$tb_riwayat_pembayaran = mysqli_query($conn, "SELECT * FROM riwayat_pembayaran");
+while($data = mysqli_fetch_array($tb_riwayat_pembayaran)) {
+  // cek banyak user yang belum bayar
+  if($data['tgl_tagihan'] == $tanggal AND $data['status_pem'] == 'berhasil'){
+    $total = $total + $data['nominal'];
+    $lunas++;
+  }
+}
+
+// menghitung jumlah user
+$tb_akun = mysqli_query($conn, "SELECT * FROM akun");
+$jumlah_user = 0;
+while($data = mysqli_fetch_array($tb_akun)) {
+  $jumlah_user++;
+}
 
 ?>
 
@@ -49,25 +64,46 @@ while($data = mysqli_fetch_array($tb_list_tunggakan)) {
 
         <div class="con-listBelum">
           <h4>Belum Lunas <?=$blm_lunas?> Orang</h4>
-          <div class="card-list">
-            <div>
-              <a href="img/profil/foto_default.jpg" data-lightbox="work"><img src="img/profil/foto_default.jpg" width="35"></a>
-              <p><?=strtolower("Muhammad Akbar")?></p>
-            </div>
-            <div class="labelPem">
-              <p>-Rp 5.000</p>
-              <h4>Belum Lunas</h4>
-            </div>
-          </div>
-          <div class="lihatSemua">
-            <i id="iconLihat2" class="fa-solid fa-angle-left"></i>
-            <p class="liatSemua2">Lihat semua</p>
-          </div>
+          <?php
+          $tb_list_tunggakan = mysqli_query($conn, "SELECT * FROM list_tunggakan");
+          while($data = mysqli_fetch_array($tb_list_tunggakan)) {
+            // generate user yang belum bayar
+            if($data['tanggal_tagihan'] == $tanggal){
+              $id_akun = $data['id_akun'];
+              $profil = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM akun WHERE id = '$id_akun'"));
+              ?>
+                <div class="card-list">
+                  <div>
+                    <a href="<?=$profil['foto']?>" data-lightbox="work"><img class="foto" src="<?=$profil['foto']?>" width="35"></a>
+                    <p><?=strtolower($profil['nama'])?></p>
+                  </div>
+                  <div class="labelPem">
+                    <p>-Rp <?= number_format($nominal, 0, ',', '.'); ?></p>
+                    <h4>Belum Lunas</h4>
+                  </div>
+                </div>
+              <?php
+            }
+          }?>
         </div>
+        <?php
+        if($blm_lunas >= 4){
+          ?>
+            <div class="lihatSemua">
+              <i id="iconLihat2" class="fa-solid fa-angle-left"></i>
+              <p class="liatSemua2">Lihat semua</p>
+            </div>
+          <?php
+        }
 
-        <div class="btn-hapus">
-          Hapus
-        </div>
+
+        if($blm_lunas == $jumlah_user){ ?>
+          <div data-id="<?=$id_jadwal_tagihan?>" class="btn-hapus">
+            Hapus
+          </div>
+        <?php
+        }
+        ?>
 
       </div>
     </div>

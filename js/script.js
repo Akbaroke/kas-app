@@ -10,6 +10,7 @@ const alert8 = $('.alert').data('errorUpload2');
 const alert9 = $('.alert').data('errorUpload3');
 const alert10 = $('.alert').data('errorNominal');
 const alert11 = $('.alert').data('successJadwal');
+const alert12 = $('.alert').data('errorTanggal');
 
 if(alert === 'error'){
   Swal.fire({
@@ -142,6 +143,17 @@ else if(alert === 'errorNominal'){
     confirmButtonColor: "#212635",
   })
 }
+else if(alert === 'errorTanggal'){
+  Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Oppss...',
+    text: "Tanggal sudah ada dalam list Jadwal!",
+    showConfirmButton: true,
+    timer: 5000,
+    confirmButtonColor: "#212635",
+  })
+}
 else if(alert === 'successJadwal'){
   Swal.fire({
     position: 'center',
@@ -243,6 +255,36 @@ $('#btn-verif a:nth-child(1)').on('click', function () {
   })
 });
 
+// hapus jadwal
+$('.btn-hapus').on('click', function () {
+  const dataId = $(this).attr('data-id');
+  Swal.fire({
+    title: 'Yakin ingin Hapus ?',
+    text: "Jadwal Tagihan Akan terhapus secara permanen!",
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#089A7C',
+    cancelButtonColor: '#EA5455',
+    confirmButtonText: 'Ya, Hapus',
+    cancelButtonText: 'Batal',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Yeay!',
+        text: "Pembayaran Berhasil mengHapus Tagihan!",
+        showConfirmButton: true,
+        confirmButtonColor: "#089A7C",
+        confirmButtonText: 'Okay',
+      })
+      setTimeout(function(){
+        window.location.href = 'admin.setting.hapus.php?id='+dataId;
+      },1200);
+    }
+  })
+});
+
 
 
 
@@ -313,10 +355,12 @@ var isActive = false;
 $('.liatSemua2').on('click', function () {
   if (isActive) {
     $('.statusPem-belum').css('max-height', '290px');
+    $('.con-isi > .con-listBelum').css('max-height', '300px');
     $(this).html('Lihat semua');
     $('#iconLihat2').css('transform', 'rotate(90deg)');
   } else {
     $('.statusPem-belum').css('max-height', 'max-content');
+    $('.con-isi > .con-listBelum').css('max-height', 'max-content');
     $(this).html('Lihat sebagian');
     $('#iconLihat2').css('transform', 'rotate(-90deg)');
   }

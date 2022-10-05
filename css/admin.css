@@ -41,6 +41,7 @@
   width: 71px;
   height: 71px;
   transition: .3s;
+  border-radius: 10px;
 }
 
 .card-admin > .menu > .cardIcon img:hover{

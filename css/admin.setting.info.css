@@ -44,13 +44,13 @@
 }
 
 
-.con-isi > .con-listBelum,
-.con-isi > .con-listLunas{
+.con-isi > .con-listBelum{
   text-align: start;
+  max-height: 300px;
+  overflow: hidden;
 }
 
-.con-isi > .con-listBelum > h4 ,
-.con-isi > .con-listLunas > h4 {
+.con-isi > .con-listBelum > h4{
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
   font-weight: 300;
@@ -59,8 +59,7 @@
   margin-top: 5px;
 }
 
-.con-isi > .con-listBelum > .card-list,
-.con-isi > .con-listLunas > .card-list{
+.con-isi > .con-listBelum > .card-list{
   max-width: 312px;
   height: 60px;
   background-color: #fff;
@@ -72,16 +71,14 @@
   padding: 0 15px;
 }
 
-.con-isi > .con-listBelum > .card-list > div,
-.con-isi > .con-listLunas > .card-list > div{
+.con-isi > .con-listBelum > .card-list > div{
   display: flex;
   flex-direction: row;
   gap: 9px;
   align-items: center;
 }
 
-.con-isi > .con-listBelum > .card-list > div > img,
-.con-isi > .con-listLunas > .card-list > div > img{
+.con-isi > .con-listBelum > .card-list .foto{
   width: 35px;
   height: 35px;
   object-fit: cover;
@@ -92,15 +89,13 @@
   background-image: url('img/profil/foto_default.jpg');
 }
 
-.con-isi > .con-listBelum > .card-list > div > img:hover,
-.con-isi > .con-listLunas > .card-list > div > img:hover{
+.con-isi > .con-listBelum > .card-list .foto:hover{
   transition: .3s;
   transform: scale(1.02);
   box-shadow: -1px 1px 4px #727272;
 }
 
-.con-isi > .con-listBelum > .card-list > div > p,
-.con-isi > .con-listLunas > .card-list > div > p{
+.con-isi > .con-listBelum > .card-list > div > p{
   display: block;
   max-width: 170px;
   overflow: hidden;
@@ -109,21 +104,6 @@
   font-weight: 400;
   color: #000;
   text-transform: capitalize;
-}
-
-.con-isi > .con-listLunas > .card-list > .labelPem{
-  width: 66px;
-  height: 20px;
-  background-color: #212635;
-  color: #fff;
-  border-radius: 5px;
-  font-size: 10px;
-  font-weight: 700;
-  text-align: center;
-  position: relative;
-  bottom: -32px;
-  right: -5px;
-  padding: 2px 0;
 }
 
 
@@ -161,7 +141,6 @@
 }
 
 
-.con-isi > .con-listLunas > .card-list:nth-last-child(1),
 .con-isi > .con-listBelum > .card-list:nth-last-child(1){
   margin-bottom: 0px;
 }
