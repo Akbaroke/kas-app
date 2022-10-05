@@ -1,0 +1,107 @@
+.card-admin2 > .con-listUser{
+  max-width: 301px;
+  height: max-content;
+}
+.card-admin2 > .con-listUser > div{
+  max-width: 301px;
+  max-height: 300px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.card-admin2 > .con-listUser > div > h3{
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+  text-align: start;
+  margin-bottom: 6px;
+}
+
+.card-listAdmin,
+.card-listUser{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  max-width: 301px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.card-listAdmin:hover,
+.card-listUser:hover{
+  transition: .3s;
+  transform: scale(1.02);
+  box-shadow: -1px 1px 4px #727272;
+}
+
+.card-listAdmin > div,
+.card-listUser > div{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.card-listAdmin > div > .nomor,
+.card-listUser > div > .nomor{
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: #eaeaea;
+  color: #7E7E7E;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 50%;
+}
+
+.card-listAdmin > div > div,
+.card-listUser > div > div{
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  gap: 3px;
+  align-items: flex-start;
+}
+
+.card-listAdmin > div > div > h4,
+.card-listUser > div > div > h4{
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.card-listAdmin > div > div > p ,
+.card-listUser > div > div > p {
+  color: #089A7C;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card-listAdmin > p,
+.card-listUser > p{
+  font-size: 10px;
+  font-weight: 500;
+  color: #7E7E7E;
+  position: relative;
+  bottom: -28px;
+}
+
+#btn-lihatAdmin,
+#btn-lihatUser{
+  margin-top: 0;
+  position: relative;
+  top: -5px;
+}

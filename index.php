@@ -134,7 +134,7 @@ unset($_SESSION["admin"]);
       }
     }
     $status = $profil['role'];
-    if($status === 'admin'){
+    if($status == 'admin' OR $status == 'superadmin'){
       $_SESSION["admin"] = true;
       ?>
         <div class="cardHome-6">

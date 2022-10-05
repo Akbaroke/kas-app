@@ -9,7 +9,7 @@ while($row = mysqli_fetch_assoc($res)){
   $time = $row['time'];
   $role = $row['role'];
   if($time > $time_now){
-    if($role === 'admin'){
+    if($role === 'admin' OR $role === 'superadmin'){
       $admin_online++;
     }
   }

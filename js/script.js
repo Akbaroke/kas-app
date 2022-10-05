@@ -341,10 +341,12 @@ var isActive = false;
 $('.liatSemua1').on('click', function () {
   if (isActive) {
     $('.statusPem-lunas').css('max-height', '290px');
+    $('.card-admin2 > .con-listUser > div').css('max-height', '300px');
     $(this).html('Lihat semua');
     $('#iconLihat1').css('transform', 'rotate(90deg)');
   } else {
     $('.statusPem-lunas').css('max-height', 'max-content');
+    $('.card-admin2 > .con-listUser > div').css('max-height', 'max-content');
     $(this).html('Lihat sebagian');
     $('#iconLihat1').css('transform', 'rotate(-90deg)');
   }
@@ -356,11 +358,13 @@ $('.liatSemua2').on('click', function () {
   if (isActive) {
     $('.statusPem-belum').css('max-height', '290px');
     $('.con-isi > .con-listBelum').css('max-height', '300px');
+    $('.card-admin2 > .con-listUser > div').css('max-height', '300px');
     $(this).html('Lihat semua');
     $('#iconLihat2').css('transform', 'rotate(90deg)');
   } else {
     $('.statusPem-belum').css('max-height', 'max-content');
     $('.con-isi > .con-listBelum').css('max-height', 'max-content');
+    $('.card-admin2 > .con-listUser > div').css('max-height', 'max-content');
     $(this).html('Lihat sebagian');
     $('#iconLihat2').css('transform', 'rotate(-90deg)');
   }

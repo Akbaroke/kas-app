@@ -30,7 +30,7 @@ if(!isset($_SESSION["admin"])){
           <p>Setting Jadwal</p>
         </div>
         <div class="cardIcon">
-          <a href=""><img src="img/icon/icon-15.png" width="71"></a>
+          <a href="admin.listuser.php"><img src="img/icon/icon-15.png" width="71"></a>
           <p>List User</p>
         </div>
         <div class="cardIcon">
