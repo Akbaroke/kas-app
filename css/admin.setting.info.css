@@ -166,3 +166,23 @@
   margin-bottom: 0px;
 }
 
+.btn-hapus{
+  width: 102px;
+  height: 28px;
+  border-radius: 5px;
+  background-color: #EA5455;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  text-align: center;
+  padding: 6px 0;
+  cursor: pointer;
+  transition: .3s;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.btn-hapus:hover{
+  transition: .3s;
+  transform: scale(1.03);
+}

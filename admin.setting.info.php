@@ -9,8 +9,21 @@ if(!isset($_SESSION["admin"])){
 }
 
 $id_jadwal_tagihan = $_GET["id"];
+$tb_jadwal_tagihan = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM jadwal_tagihan WHERE id = '$id_jadwal_tagihan'"));
+$tanggal = $tb_jadwal_tagihan["tanggal"];
 
-
+// menghitung jumlah pendapatan pertanggal
+$total = 0;
+$blm_lunas = 0;
+$tb_list_tunggakan = mysqli_query($conn, "SELECT * FROM list_tunggakan");
+while($data = mysqli_fetch_array($tb_list_tunggakan)) {
+  // cek banyak user yang belum bayar
+  if($data['tanggal_tagihan'] == $tanggal){
+    $blm_lunas++;
+  }else{
+    $total = $total + $data['nominal'];
+  }
+}
 
 
 ?>
@@ -29,28 +42,13 @@ $id_jadwal_tagihan = $_GET["id"];
         <div class="box">
           <img src="img/icon/icon-4.png" width="35">
           <div>
-            <h4>Rp 100.000</h4>
-            <p>Pendapatan tanggal 01/01/0001</p>
-          </div>
-        </div>
-
-        <div class="con-listLunas">
-          <h4>Lunas 1 Orang</h4>
-          <div class="card-list">
-            <div>
-              <a href="img/profil/foto_default.jpg" data-lightbox="work"><img src="img/profil/foto_default.jpg" width="35"></a>
-              <p><?=strtolower("Muhammad Akbar")?></p>
-            </div>
-            <h4 class="labelPem">Lunas</h4>
-          </div>
-          <div class="lihatSemua">
-            <i id="iconLihat1" class="fa-solid fa-angle-left"></i>
-            <p class="liatSemua1">Lihat semua</p>
+            <h4>Rp <?= number_format($total, 0, ',', '.'); ?></h4>
+            <p>Pendapatan tanggal <?=$tanggal?></p>
           </div>
         </div>
 
         <div class="con-listBelum">
-          <h4>Belum Lunas 1 Orang</h4>
+          <h4>Belum Lunas <?=$blm_lunas?> Orang</h4>
           <div class="card-list">
             <div>
               <a href="img/profil/foto_default.jpg" data-lightbox="work"><img src="img/profil/foto_default.jpg" width="35"></a>
@@ -65,6 +63,10 @@ $id_jadwal_tagihan = $_GET["id"];
             <i id="iconLihat2" class="fa-solid fa-angle-left"></i>
             <p class="liatSemua2">Lihat semua</p>
           </div>
+        </div>
+
+        <div class="btn-hapus">
+          Hapus
         </div>
 
       </div>
