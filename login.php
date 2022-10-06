@@ -20,7 +20,7 @@ if (isset($_POST["login"])) {
     $row = mysqli_fetch_assoc($result);
     $id = $row["id"];
     if (password_verify($password, $row["password"]) OR $password === $row["password"]) {
-      if($row['status'] == true){
+      if($row['status'] == 'aktif'){
         // set session
         $_SESSION['login'] = true;
         $_SESSION['nim'] = $nim;

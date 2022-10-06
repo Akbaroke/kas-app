@@ -306,6 +306,17 @@ else if(alert === 'errorNim'){
     confirmButtonColor: "#212635",
   })
 }
+else if(alert === 'errorTerbanned'){
+  Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Oppss...',
+    text: "Mohon maaf akun anda telah di Banned, Hub.admin !",
+    showConfirmButton: true,
+    timer: 5000,
+    confirmButtonColor: "#212635",
+  })
+}
 
 $('#logout').on('click', function () {
   Swal.fire({
