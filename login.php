@@ -20,15 +20,19 @@ if (isset($_POST["login"])) {
     $row = mysqli_fetch_assoc($result);
     $id = $row["id"];
     if (password_verify($password, $row["password"]) OR $password === $row["password"]) {
-      // set session
-      $_SESSION["login"] = true;
-      $_SESSION["nim"] = $nim;
-      $_SESSION["id"] = $id;
+      if($row['status'] == true){
+        // set session
+        $_SESSION['login'] = true;
+        $_SESSION['nim'] = $nim;
+        $_SESSION['id'] = $id;
 
-      $time = time() + 10;
-      mysqli_query($conn, "UPDATE akun SET time='$time' WHERE id='$id'");
-      header("Location: index.php");
-      exit;
+        $time = time() + 10;
+        mysqli_query($conn, "UPDATE akun SET time='$time' WHERE id='$id'");
+        header("Location: index.php");
+        exit;
+      }else{
+        echo "<div class='alert' data-alert='errorTerbanned'></div>";
+      }
     }
   }
 
