@@ -1,3 +1,7 @@
 <?php
-// koneksi database
-$conn = mysqli_connect("localhost", "u1607362_kas-app", "15sep2001", "u1607362_kas-app");
+$servername = "localhost";
+$database = "kas-app";
+$username = "root";
+$password = "";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);

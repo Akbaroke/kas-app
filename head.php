@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +8,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Akbaroke">
+  
+
   <!-- sweetalert2 -->
   <link rel="stylesheet" href="cdn/sweetalert2.min.css">
 
@@ -13,6 +19,10 @@
 
   <!-- Light Box -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css">
+
+  <!-- Icon -->
+  <link rel="icon" href="img/icon/utama.png" />
+  <link rel="apple-touch-icon" href="img/icon/utama.png">
 
   <!-- css -->
   <link rel="stylesheet" href="css/reset.css">
