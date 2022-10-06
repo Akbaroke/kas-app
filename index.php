@@ -88,7 +88,7 @@ unset($_SESSION["admin"]);
     if($profil['total_tagihan'] == 0){
     ?>
       <div class="cardHome-555">
-        <a class="riwayat" href=""><img src="img/icon/icon-6.png" alt="icon" width="16"></a>
+        <a class="riwayat" href="riwayat.pembayaran.php"><img src="img/icon/icon-6.png" alt="icon" width="16"></a>
         <div class="box">
           <img src="img/icon/icon-5.png" alt="icon" width="35">
           <h3>Rp <?= number_format($profil['total_tagihan'], 0, ',', '.'); ?></h3>
@@ -104,7 +104,7 @@ unset($_SESSION["admin"]);
       if($tb_riwayatPem == true){
         ?>
           <div class="cardHome-55">
-            <a class="riwayat" href=""><img src="img/icon/icon-6.png" alt="icon" width="16"></a>
+            <a class="riwayat" href="riwayat.pembayaran.php"><img src="img/icon/icon-6.png" alt="icon" width="16"></a>
             <div class="box">
               <img src="img/icon/icon-11.png" alt="icon" width="35">
               <h3>Rp <?= number_format($profil['total_tagihan'], 0, ',', '.'); ?></h3>
@@ -119,7 +119,7 @@ unset($_SESSION["admin"]);
       }else{
         ?>
           <div class="cardHome-5">
-            <a class="riwayat" href=""><img src="img/icon/icon-6.png" alt="icon" width="16"></a>
+            <a class="riwayat" href="riwayat.pembayaran.php"><img src="img/icon/icon-6.png" alt="icon" width="16"></a>
             <div class="box">
               <img src="img/icon/icon-10.png" alt="icon" width="35">
               <h3>Rp <?= number_format($profil['total_tagihan'], 0, ',', '.'); ?></h3>

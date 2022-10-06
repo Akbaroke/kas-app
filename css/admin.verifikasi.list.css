@@ -38,6 +38,7 @@
   margin-bottom: 6px;
 }
 
+.card-listRiwayat,
 .card-listJadwal,
 .card-listVerif{
   display: flex;
@@ -53,6 +54,7 @@
   cursor: pointer;
 }
 
+.card-listRiwayat:hover,
 .card-listJadwal:hover,
 .card-listVerif:hover{
   transition: .3s;
@@ -60,6 +62,7 @@
   box-shadow: -1px 1px 4px #727272;
 }
 
+.card-listRiwayat > div,
 .card-listJadwal > div,
 .card-listVerif > div{
   display: flex;
@@ -69,6 +72,7 @@
   justify-content: flex-start;
 }
 
+.card-listRiwayat > div > p,
 .card-listJadwal > div > p,
 .card-listVerif > div > p{
   display: block;
@@ -83,6 +87,7 @@
   border-radius: 50%;
 }
 
+.card-listRiwayat > div > div,
 .card-listJadwal > div > div,
 .card-listVerif > div > div{
   display: flex;
@@ -92,6 +97,7 @@
   align-items: flex-start;
 }
 
+.card-listRiwayat > div > div > h4,
 .card-listJadwal > div > div > h4,
 .card-listVerif > div > div > h4{
   font-family: 'Roboto', sans-serif;
@@ -101,6 +107,7 @@
   text-transform: capitalize;
 }
 
+.card-listRiwayat > div > div > p ,
 .card-listJadwal > div > div > p ,
 .card-listVerif > div > div > p {
   color: #089A7C;
@@ -109,6 +116,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.card-listRiwayat > p,
 .card-listJadwal > p,
 .card-listVerif > p{
   font-size: 10px;

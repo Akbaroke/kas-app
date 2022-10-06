@@ -1,0 +1,116 @@
+.card-riwayatPembayaran{
+  max-width: 354px;
+  height: max-content;
+  background-color: #0000004a;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding: 20px;
+}
+
+.card-riwayatPembayaran > h3{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #fff;
+}
+
+.card-riwayatPembayaran > .box {
+  display: flex;
+  flex-direction: row;
+  gap: 9px;
+  padding: 9px 0;
+  border-bottom: 1px solid #fff;
+}
+
+.card-riwayatPembayaran > .box > img{
+  width: 35px;
+  height: 35px;
+}
+
+.card-riwayatPembayaran > .box > div{
+  display: flex;
+  flex-direction: column;
+}
+
+.card-riwayatPembayaran > .box > div > h4{
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #fff;
+}
+
+.card-riwayatPembayaran > .box > div > p{
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #fff;
+}
+
+.con-cardData{
+  max-width: 312px;
+  max-height: 290px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.card-data{
+  max-width: 312px;
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 0 15px;
+  transition: .3s;
+}
+
+.card-data:hover{
+  transition: .3s;
+  transform: scale(1.02);
+  box-shadow: -1px 1px 4px #727272;
+}
+
+.card-data > div{
+  display: flex;
+  flex-direction: row;
+  gap: 9px;
+  align-items: center;
+}
+
+.card-data > div img{
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  bottom: -4px;
+  transition: .3s;
+  background-image: url('img/profil/foto_default.jpg');
+}
+
+.card-data > div > p{
+  display: block;
+  max-width: 170px;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.card-data > .labelPem{
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+  border-radius: 5px;
+  font-size: 10px;
+  text-align: center;
+  position: relative;
+  bottom: -37px;
+  right: -5px;
+}

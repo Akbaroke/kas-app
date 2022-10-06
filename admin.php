@@ -34,7 +34,7 @@ if(!isset($_SESSION["admin"])){
           <p>List User</p>
         </div>
         <div class="cardIcon">
-          <a href=""><img src="img/icon/icon-16.png" width="71"></a>
+          <a href="dompet.php"><img src="img/icon/icon-16.png" width="71"></a>
           <p>Dompet Kas</p>
         </div>
       </div>

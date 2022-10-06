@@ -82,7 +82,7 @@ mysqli_query($conn, "UPDATE jadwal_tagihan SET belum_bayar='$belum_bayar' WHERE 
 
 
 // insert tb riwayat_saldokas (nominal, jenis="masuk", ket="uang kas mingguan", tanggal=time_now)
-$jenis = "masuk";
+$jenis = "Kas";
 $ket = "uang kas mingguan";
 $tanggal = date("d/m/Y");
 

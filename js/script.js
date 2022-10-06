@@ -1,16 +1,5 @@
 const alert = $('.alert').data('alert');
-const alert1 = $('.alert').data('errorPassword1');
-const alert2 = $('.alert').data('errorPassword2');
-const alert3 = $('.alert').data('errorPassword3');
-const alert4 = $('.alert').data('succsesPassword');
-const alert5 = $('.alert').data('succesEdit');
-const alert6 = $('.alert').data('successVerif');
-const alert7 = $('.alert').data('errorUpload1');
-const alert8 = $('.alert').data('errorUpload2');
-const alert9 = $('.alert').data('errorUpload3');
-const alert10 = $('.alert').data('errorNominal');
-const alert11 = $('.alert').data('successJadwal');
-const alert12 = $('.alert').data('errorTanggal');
+
 
 if(alert === 'error'){
   Swal.fire({
@@ -167,6 +156,45 @@ else if(alert === 'successJadwal'){
   setTimeout(function(){
     window.location.href = 'admin.setting.list.php';
   },2000);
+}
+else if(alert === 'SuksesPenarikan'){
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Succses',
+    text: "Data Penarikan Berhasil terSimpan !",
+    showConfirmButton: true,
+    timer: 2000,
+    confirmButtonColor: "#212635",
+  })
+  setTimeout(function(){
+    window.location.href = 'dompet.php';
+  },2000);
+}
+else if(alert === 'SuksesDeposit'){
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Succses',
+    text: "Data Deposit Berhasil terSimpan !",
+    showConfirmButton: true,
+    timer: 2000,
+    confirmButtonColor: "#212635",
+  })
+  setTimeout(function(){
+    window.location.href = 'dompet.php';
+  },2000);
+}
+else if(alert === 'errorMelebihiSaldo'){
+  Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Oppss...',
+    text: "Nominal Melebihi Saldo saat ini!",
+    showConfirmButton: true,
+    timer: 5000,
+    confirmButtonColor: "#212635",
+  })
 }
 
 $('#logout').on('click', function () {
@@ -456,6 +484,12 @@ $('.card-listUser').on('click',function(){
 $('.card-listAdmin').on('click',function(){
   const dataId = $(this).attr('data-id');
   window.location.href = 'admin.listuser.info.php?id='+dataId;
+})
+
+// handel klik cardHome-3
+$('.cardHome-3').on('click',function(){
+  window.location.href = 'dompet.php';
+  $(".container3 > #back").attr("href", "index.php");
 })
 
 // handel klik Verifikasi Pembayaran

@@ -187,3 +187,99 @@ function jadwalTagihan($data){
 
   echo "<div class='alert' data-alert='successJadwal'></div>";
 }
+
+
+
+function tarikSaldo($data){
+  global $conn;
+
+  $nominal = htmlspecialchars($data["nominal"]);
+  $ket = htmlspecialchars($data["ket"]);
+  $tanggal = date("H:i - d/m/Y");
+
+  // validasi nominal harus angka
+  if(!preg_match("/^[0-9]*$/", $nominal)){
+    echo "<div class='alert' data-alert='errorNominal'></div>";
+    return false;
+  }
+
+  // ambil data saldo awal
+  $tb_total = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM total WHERE id=1"));
+  
+  // cek apakah nominal melebihi saldo
+  if($nominal > $tb_total['saldo']){
+    echo "<div class='alert' data-alert='errorMelebihiSaldo'></div>";
+    return false;
+  }
+  
+  // insert riwayat saldo
+  mysqli_query($conn, "INSERT INTO riwayat_saldokas VALUES ('','$nominal','penarikan','$ket', '$tanggal')");
+  
+  // update total
+  $saldo_total = $tb_total['saldo'] - $nominal;
+  mysqli_query($conn, "UPDATE total SET saldo='$saldo_total', s_keluar='$nominal' WHERE id=1 ");
+
+  echo "<div class='alert' data-alert='SuksesPenarikan'></div>";
+}
+
+function depositSaldo($data){
+  global $conn;
+
+  $nominal = htmlspecialchars($data["nominal"]);
+  $ket = htmlspecialchars($data["ket"]);
+  $tanggal = date("H:i - d/m/Y");
+
+  // validasi nominal harus angka
+  if(!preg_match("/^[0-9]*$/", $nominal)){
+    echo "<div class='alert' data-alert='errorNominal'></div>";
+  }
+
+  // insert riwayat saldo
+  mysqli_query($conn, "INSERT INTO riwayat_saldokas VALUES ('','$nominal','deposit','$ket', '$tanggal')");
+
+  // ambil data saldo awal
+  $tb_total = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM total WHERE id=1"));
+  $saldo_total = $tb_total['saldo'] + $nominal;
+
+  // update total
+  mysqli_query($conn, "UPDATE total SET saldo='$saldo_total', s_masuk='$nominal' WHERE id=1 ");
+
+  echo "<div class='alert' data-alert='SuksesDeposit'></div>";
+}
+
+
+// function valNohp($handphone){
+
+//   $jumlah_digit_handphone = strlen(substr($handphone, 3));
+//   // nomor handphone yang ditampilkan jika berjumlah 9 digit
+//   if ($jumlah_digit_handphone == 9) {
+//       $tampil_handphone = "+62 " . substr($handphone, 3, 3) . "-" . substr($handphone, 6, 3) . "-" . substr($handphone, 9, 3);
+//   }
+//   // nomor handphone yang ditampilkan jika berjumlah 10 digit
+//   if ($jumlah_digit_handphone == 10) {
+//       $tampil_handphone = "+62 " . substr($handphone, 3, 3) . "-" . substr($handphone, 6, 4) . "-" . substr($handphone, 10, 3);
+//   }
+//   // nomor handphone yang ditampilkan jika berjumlah 11 digit
+//   if ($jumlah_digit_handphone == 11) {
+//       $tampil_handphone = "+62 " . substr($handphone, 3, 3) . "-" . substr($handphone, 6, 4) . "-" . substr($handphone, 10, 4);
+//   }
+//   // nomor handphone yang ditampilkan jika berjumlah 12 digit
+//   if ($jumlah_digit_handphone == 12) {
+//       $tampil_handphone = "+62 " . substr($handphone, 3, 3) . "-" . substr($handphone, 6, 4) . "-" . substr($handphone, 10, 5);
+//   }
+//   // validasi inputan nomor handphone
+//   if (!preg_match("/^[0-9|(\+|)]*$/", $handphone) OR strlen(strpos($handphone, "+", 1)) > 0) {
+//       echo "<script>alert('Handphone hanya boleh menggunakan angka dan diawali simbol +');</script>";
+//   }
+//   else if (substr($handphone, 0, 3) != "+62" ) {
+//       echo "<script>alert('Handphone harus diawali dengan kode negara +62');</script>";
+//   }
+//   else if (substr($handphone, 3, 1) == "0" ) {
+//       echo "<script>alert('Handphone tidak boleh diikuti dengan angka 0 setelah kode negara');</script>";
+//   }
+//   else {
+//   // menampilkan nomor handphone
+//     exit;
+//   }
+//   return $tampil_handphone;
+// }
