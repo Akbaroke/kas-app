@@ -9,8 +9,12 @@ function edit($data){
   global $conn;
 
   $nama = htmlspecialchars(stripslashes($data["nama"]));
-  $no_wa = htmlspecialchars(strtolower(stripslashes($data["no_wa"])));
   $id = $_SESSION["id"];
+
+  $no_wa = valNohp();
+  if (!$no_wa) {
+    return false;
+  }
   
   mysqli_query($conn, "UPDATE akun SET nama='$nama', no_wa='$no_wa' WHERE id='$id'");
   return mysqli_affected_rows($conn);
@@ -22,6 +26,12 @@ function editInfouser($data){
   $nama = htmlspecialchars(stripslashes($data["nama"]));
   $no_wa = htmlspecialchars(strtolower(stripslashes($data["no_wa"])));
   $id = htmlspecialchars(strtolower(stripslashes($data["id_user"])));
+
+  // validasi no_wa
+  $no_wa = valNohp();
+  if (!$no_wa) {
+    return false;
+  }
   
   mysqli_query($conn, "UPDATE akun SET nama='$nama', no_wa='$no_wa' WHERE id='$id'");
   return mysqli_affected_rows($conn);
@@ -35,6 +45,12 @@ function editInfouserSuper($data){
   $no_wa = htmlspecialchars(strtolower(stripslashes($data["no_wa"])));
   $id = htmlspecialchars(strtolower(stripslashes($data["id_user"])));
   $role = htmlspecialchars(stripslashes($data["role"]));
+
+  // validasi no_wa
+  $no_wa = valNohp();
+  if (!$no_wa) {
+    return false;
+  }
   
   mysqli_query($conn, "UPDATE akun SET nim='$nim', nama='$nama', role='$role', no_wa='$no_wa' WHERE id='$id'");
   return mysqli_affected_rows($conn);
@@ -248,38 +264,22 @@ function depositSaldo($data){
 }
 
 
-// function valNohp($handphone){
+function valNohp(){
 
-//   $jumlah_digit_handphone = strlen(substr($handphone, 3));
-//   // nomor handphone yang ditampilkan jika berjumlah 9 digit
-//   if ($jumlah_digit_handphone == 9) {
-//       $tampil_handphone = "+62 " . substr($handphone, 3, 3) . "-" . substr($handphone, 6, 3) . "-" . substr($handphone, 9, 3);
-//   }
-//   // nomor handphone yang ditampilkan jika berjumlah 10 digit
-//   if ($jumlah_digit_handphone == 10) {
-//       $tampil_handphone = "+62 " . substr($handphone, 3, 3) . "-" . substr($handphone, 6, 4) . "-" . substr($handphone, 10, 3);
-//   }
-//   // nomor handphone yang ditampilkan jika berjumlah 11 digit
-//   if ($jumlah_digit_handphone == 11) {
-//       $tampil_handphone = "+62 " . substr($handphone, 3, 3) . "-" . substr($handphone, 6, 4) . "-" . substr($handphone, 10, 4);
-//   }
-//   // nomor handphone yang ditampilkan jika berjumlah 12 digit
-//   if ($jumlah_digit_handphone == 12) {
-//       $tampil_handphone = "+62 " . substr($handphone, 3, 3) . "-" . substr($handphone, 6, 4) . "-" . substr($handphone, 10, 5);
-//   }
-//   // validasi inputan nomor handphone
-//   if (!preg_match("/^[0-9|(\+|)]*$/", $handphone) OR strlen(strpos($handphone, "+", 1)) > 0) {
-//       echo "<script>alert('Handphone hanya boleh menggunakan angka dan diawali simbol +');</script>";
-//   }
-//   else if (substr($handphone, 0, 3) != "+62" ) {
-//       echo "<script>alert('Handphone harus diawali dengan kode negara +62');</script>";
-//   }
-//   else if (substr($handphone, 3, 1) == "0" ) {
-//       echo "<script>alert('Handphone tidak boleh diikuti dengan angka 0 setelah kode negara');</script>";
-//   }
-//   else {
-//   // menampilkan nomor handphone
-//     exit;
-//   }
-//   return $tampil_handphone;
-// }
+  $handphone = htmlspecialchars(strtolower(stripslashes($_POST["no_wa"])));
+
+  // validasi inputan nomor handphone
+  if (!preg_match("/^[0-9|(\+|)]*$/", $handphone) OR strlen(strpos($handphone, "+", 1)) > 0) {
+    echo "<div class='alert' data-alert='errorNohp1'></div>";
+    // Nomor hanya boleh menggunakan angka dan diawali simbol +
+  }
+  else if (substr($handphone, 0, 3) != "+62" ) {
+    echo "<div class='alert' data-alert='errorNohp2'></div>";
+    // Nomor harus diawali dengan kode negara +62
+  }
+  else if (substr($handphone, 3, 1) == "0" ) {
+    echo "<div class='alert' data-alert='errorNohp3'></div>";
+    // Nomor tidak boleh diikuti dengan angka 0 setelah kode negara
+  }
+  return $handphone;
+}

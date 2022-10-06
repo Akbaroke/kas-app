@@ -196,6 +196,39 @@ else if(alert === 'errorMelebihiSaldo'){
     confirmButtonColor: "#212635",
   })
 }
+else if(alert === 'errorNohp1'){
+  Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Oppss...',
+    text: "Nomor hanya boleh menggunakan angka dan diawali simbol +",
+    showConfirmButton: true,
+    timer: 5000,
+    confirmButtonColor: "#212635",
+  })
+}
+else if(alert === 'errorNohp2'){
+  Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Oppss...',
+    text: "Nomor harus diawali dengan kode negara +62",
+    showConfirmButton: true,
+    timer: 5000,
+    confirmButtonColor: "#212635",
+  })
+}
+else if(alert === 'errorNohp3'){
+  Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Oppss...',
+    text: "Nomor tidak boleh diikuti dengan angka 0 setelah kode negara",
+    showConfirmButton: true,
+    timer: 5000,
+    confirmButtonColor: "#212635",
+  })
+}
 
 $('#logout').on('click', function () {
   Swal.fire({
