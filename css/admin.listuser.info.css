@@ -1,0 +1,123 @@
+.card-infoUser {
+  max-width: 350px;
+  height: max-content;
+  background-color: #0000004a;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.card-infoUser > div{
+  margin: 0 auto;
+  position: relative;
+  top: -40px;
+  text-align: center;
+}
+
+.card-infoUser .fotoProfil {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #fff;
+  outline: 1px solid #fff;
+  cursor: pointer;
+}
+
+.card-infoUser > div > h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.card-infoUser > form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+
+.card-infoUser > form > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3px;
+}
+
+.card-infoUser label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500px;
+  color: #fff;
+}
+
+.card-infoUser select,
+.card-infoUser input{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  width: 244px;
+  height: 33px;
+  padding: 10px;
+  text-align: center;
+  color: #000;
+  font-size: 12px;
+  background-color: #D9D9D9;
+  border-radius: 5px;
+  border: none;
+}
+
+.card-infoUser > form > a{
+  color: #fff;
+  font-size: 10px;
+  font-weight: 300;
+  position: relative;
+  top: -10px;
+  left: -78px;
+}
+
+.card-infoUser > form > .btn-userInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+
+.card-infoUser > form > .btn-userInfo > .btn-unbanned,
+.card-infoUser > form > .btn-userInfo > .btn-banned,
+.card-infoUser > form > .btn-userInfo > .btn-simpan{
+  display: block;
+  width: 102px;
+  height: 28px;
+  color: #fff;
+  background-color: #08779A;
+  border-radius: 5px;
+  border: none;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.card-infoUser > form > .btn-userInfo > .btn-unbanned,
+.card-infoUser > form > .btn-userInfo > .btn-banned{
+  background-color: #EA5455;
+  text-align: center;
+  padding: 5px 0;
+}
+.card-infoUser > form > .btn-userInfo > .btn-unbanned{
+  background-color: #089A7C;
+}
+
+.card-infoUser > form > .btn-userInfo > .btn-unbanned:hover,
+.card-infoUser > form > .btn-userInfo > .btn-banned:hover,
+.card-infoUser > form > .btn-userInfo > .btn-simpan:hover{
+  box-shadow: 0 0 4px #d9d9d934;
+  transition: .3s;
+  transform: scale(1.02);
+}

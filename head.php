@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="css/admin.setting.tambah.css">
   <link rel="stylesheet" href="css/admin.setting.info.css">
   <link rel="stylesheet" href="css/admin.listuser.css">
+  <link rel="stylesheet" href="css/admin.listuser.info.css">
 
   <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

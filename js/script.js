@@ -285,6 +285,65 @@ $('.btn-hapus').on('click', function () {
   })
 });
 
+// banned akun user
+$('.btn-banned').on('click', function () {
+  Swal.fire({
+    title: 'Yakin ingin Banned ?',
+    text: "Setelah user di banned maka user tidak bisa login kembali sebelum di unbanned!",
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#089A7C',
+    cancelButtonColor: '#EA5455',
+    confirmButtonText: 'Ya, Banned',
+    cancelButtonText: 'Batal',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Yeay!',
+        text: "User berhasil di Banned!",
+        showConfirmButton: true,
+        confirmButtonColor: "#089A7C",
+        confirmButtonText: 'Okay',
+      })
+      setTimeout(function(){
+        window.location.href = 'get.banned.php';
+      },1200);
+    }
+  })
+});
+
+
+// unbanned akun user
+$('.btn-unbanned').on('click', function () {
+  Swal.fire({
+    title: 'Yakin ingin Unbanned ?',
+    text: "Setelah user di Unbanned maka user dapat login kembali!",
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#089A7C',
+    cancelButtonColor: '#EA5455',
+    confirmButtonText: 'Ya, Unbanned',
+    cancelButtonText: 'Batal',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Yeay!',
+        text: "User berhasil di Unbanned!",
+        showConfirmButton: true,
+        confirmButtonColor: "#089A7C",
+        confirmButtonText: 'Okay',
+      })
+      setTimeout(function(){
+        window.location.href = 'get.unbanned.php';
+      },1200);
+    }
+  })
+});
+
 
 
 
@@ -385,6 +444,18 @@ $('.card-listVerif').on('click',function(){
 $('.card-listJadwal').on('click',function(){
   const dataId = $(this).attr('data-id');
   window.location.href = 'admin.setting.info.php?id='+dataId;
+})
+
+// handel klik admin listuser info
+$('.card-listUser').on('click',function(){
+  const dataId = $(this).attr('data-id');
+  window.location.href = 'admin.listuser.info.php?id='+dataId;
+})
+
+// handel klik admin listAdmin info
+$('.card-listAdmin').on('click',function(){
+  const dataId = $(this).attr('data-id');
+  window.location.href = 'admin.listuser.info.php?id='+dataId;
 })
 
 // handel klik Verifikasi Pembayaran

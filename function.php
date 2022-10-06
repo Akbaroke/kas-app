@@ -16,6 +16,30 @@ function edit($data){
   return mysqli_affected_rows($conn);
 }
 
+function editInfouser($data){
+  global $conn;
+
+  $nama = htmlspecialchars(stripslashes($data["nama"]));
+  $no_wa = htmlspecialchars(strtolower(stripslashes($data["no_wa"])));
+  $id = htmlspecialchars(strtolower(stripslashes($data["id_user"])));
+  
+  mysqli_query($conn, "UPDATE akun SET nama='$nama', no_wa='$no_wa' WHERE id='$id'");
+  return mysqli_affected_rows($conn);
+}
+
+function editInfouserSuper($data){
+  global $conn;
+
+  $nim = htmlspecialchars(stripslashes($data["nim"]));
+  $nama = htmlspecialchars(stripslashes($data["nama"]));
+  $no_wa = htmlspecialchars(strtolower(stripslashes($data["no_wa"])));
+  $id = htmlspecialchars(strtolower(stripslashes($data["id_user"])));
+  $role = htmlspecialchars(stripslashes($data["role"]));
+  
+  mysqli_query($conn, "UPDATE akun SET nim='$nim', nama='$nama', role='$role', no_wa='$no_wa' WHERE id='$id'");
+  return mysqli_affected_rows($conn);
+}
+
 
 function ubahPassword($data){
   global $conn;

@@ -1,9 +1,9 @@
 .card-admin2 > .con-listUser{
-  max-width: 301px;
+  max-width: 320px;
   height: max-content;
 }
 .card-admin2 > .con-listUser > div{
-  max-width: 301px;
+  max-width: 320px;
   max-height: 300px;
   overflow: hidden;
   margin-top: 20px;
@@ -25,6 +25,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
+  margin: 0 auto;
   max-width: 301px;
   height: 60px;
   border-radius: 5px;
@@ -88,15 +89,18 @@
   font-size: 12px;
   font-weight: 500;
   font-family: 'Roboto', sans-serif;
+  color: #7E7E7E;
 }
 
 .card-listAdmin > p,
 .card-listUser > p{
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   color: #7E7E7E;
   position: relative;
   bottom: -28px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: capitalize;
 }
 
 #btn-lihatAdmin,

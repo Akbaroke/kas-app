@@ -7,7 +7,7 @@ if(!isset($_SESSION["admin"])){
   header("Location: login.php");
   exit;
 }
-
+unset($_SESSION["banned"]);
 
 ?>
 
@@ -39,7 +39,13 @@ if(!isset($_SESSION["admin"])){
                     <p><?=$data['banyak_tunggakan']?> Tunggakan</p>
                   </div>
                 </div>
-                <p><?=$data['status']?></p>
+                <?php
+                  if($data['status']=='aktif'){
+                    ?><p style="color: #089A7C;"><?=$data['status']?></p><?php
+                  }else{
+                    ?><p style="color: #EA5455;"><?=$data['status']?></p><?php
+                  }
+                ?>
               </div>
           <?php $i++; }
           }?>
@@ -71,7 +77,13 @@ if(!isset($_SESSION["admin"])){
                     <p><?=$data['banyak_tunggakan']?> Tunggakan</p>
                   </div>
                 </div>
-                <p><?=$data['status']?></p>
+                <?php
+                  if($data['status']=='aktif'){
+                    ?><p style="color: #089A7C;"><?=$data['status']?></p><?php
+                  }else{
+                    ?><p style="color: #EA5455;"><?=$data['status']?></p><?php
+                  }
+                ?>
               </div>
           <?php $i++; }
           }?>
