@@ -4,7 +4,7 @@ include "head.php";
 include "session_cek.php";
 
 $id = $_SESSION["id"];
-$tb_tagihan = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM jadwal_tagihan  ORDER BY id DESC LIMIT 1;"));
+$tb_tagihan = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM jadwal_tagihan ORDER BY id DESC LIMIT 1;"));
 
 
 // menghitung jumlah yang blm lunas
@@ -34,7 +34,7 @@ while($data = mysqli_fetch_array($tb_riwayat_pembayaran)) {
       </div>
       <div class="con-cardData">
         <?php
-          $row = mysqli_query($conn, "SELECT * FROM riwayat_pembayaran WHERE id_akun='$id'");
+          $row = mysqli_query($conn, "SELECT * FROM riwayat_pembayaran WHERE id_akun='$id' ORDER BY id DESC");
           while($data = mysqli_fetch_array($row)) {
             if($data['status_pem'] == 'berhasil'){
               ?>
@@ -43,7 +43,7 @@ while($data = mysqli_fetch_array($tb_riwayat_pembayaran)) {
                     <a><img src="img/icon/icon-5.png" width="35"></a>
                     <p>Bayar Kas Berhasil</p>
                   </div>
-                  <h4 class="labelPem">27/09/2022</h4>
+                  <h4 class="labelPem"><?=$data['time']?></h4>
                 </div>
               <?php
             }elseif($data['status_pem'] == 'pending'){
@@ -51,9 +51,9 @@ while($data = mysqli_fetch_array($tb_riwayat_pembayaran)) {
                 <div class="card-data">
                   <div>
                     <a><img src="img/icon/icon-11.png" width="35"></a>
-                    <p>Bayar Kas Berhasil</p>
+                    <p>Bayar Kas Pending</p>
                   </div>
-                  <h4 class="labelPem">27/09/2022</h4>
+                  <h4 class="labelPem"><?=$data['time']?></h4>
                 </div>
               <?php
             }else{
@@ -61,9 +61,9 @@ while($data = mysqli_fetch_array($tb_riwayat_pembayaran)) {
                 <div class="card-data">
                   <div>
                     <a><img src="img/icon/icon-10.png" width="35"></a>
-                    <p>Bayar Kas Berhasil</p>
+                    <p>Bayar Kas Gagal</p>
                   </div>
-                  <h4 class="labelPem">27/09/2022</h4>
+                  <h4 class="labelPem"><?=$data['time']?></h4>
                 </div>
               <?php
             }

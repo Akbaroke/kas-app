@@ -42,7 +42,7 @@ if(isset($_POST["edit"])){
         </div>
         <div>
           <label for="nama">Nama :</label>
-          <input type="text" name="nama" value="<?=$profil["nama"]?>" placeholder="masukan nama" required >
+          <input style="background-color: #909090; border:1px solid #fff;" type="text" name="nama" value="<?=$profil["nama"]?>" placeholder="masukan nama" readonly >
         </div>
         <div>
           <label for="no_wa">No.WhastApp :</label>

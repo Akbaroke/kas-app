@@ -10,6 +10,7 @@ if(!isset($_SESSION["bayar"])){
 }
 
 $id_tunggakan = $_SESSION["bayar"];
+$row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM list_tunggakan WHERE id='$id_tunggakan'"));
 
 
 if(isset($_POST["verifikasi"])){
@@ -45,7 +46,7 @@ if(isset($_POST["verifikasi"])){
             <div>
               <p>Nominal Tagihan</p>
               <p>:</p>
-              <p class="hrg">Rp 5.000</p>
+              <p class="hrg">Rp <?= number_format($row['nominal'], 0, ',', '.'); ?></p>
             </div>
           </div>
           <div class="cara">
@@ -61,7 +62,7 @@ if(isset($_POST["verifikasi"])){
             <div>
               <p>Nominal Tagihan</p>
               <p>:</p>
-              <p class="hrg">Rp 5.000</p>
+              <p class="hrg">Rp <?= number_format($row['nominal'], 0, ',', '.'); ?></p>
             </div>
           </div>
           <a class="btn-verif">Verifikasi Pembayaran</a>

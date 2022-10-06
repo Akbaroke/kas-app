@@ -229,6 +229,83 @@ else if(alert === 'errorNohp3'){
     confirmButtonColor: "#212635",
   })
 }
+else if(alert === 'errorNohp4'){
+  Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Oppss...',
+    text: "Nomor tidak boleh kurang dari 11 digit angka!",
+    showConfirmButton: true,
+    timer: 5000,
+    confirmButtonColor: "#212635",
+  })
+}
+else if(alert === 'errorNohp5'){
+  Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Oppss...',
+    text: "Nomor tidak boleh lebih dari 13 digit angka!",
+    showConfirmButton: true,
+    timer: 5000,
+    confirmButtonColor: "#212635",
+  })
+}
+else if(alert === 'errorNama'){
+  Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Oppss...',
+    text: "Nama pengirim hanya boleh Huruf dan Angka!",
+    showConfirmButton: true,
+    timer: 5000,
+    confirmButtonColor: "#212635",
+  })
+}
+else if(alert === 'errorKet1'){
+  Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Oppss...',
+    text: "Keterangan hanya boleh menggunakan Huruf dan Angka!",
+    showConfirmButton: true,
+    timer: 5000,
+    confirmButtonColor: "#212635",
+  })
+}
+else if(alert === 'errorKet2'){
+  Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Oppss...',
+    text: "keterangan harus berupa kata min.8 huruf!",
+    showConfirmButton: true,
+    timer: 5000,
+    confirmButtonColor: "#212635",
+  })
+}
+else if(alert === 'errorMinimalPenarikan'){
+  Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Oppss...',
+    text: "Penarikan Gagal, Jumlah minimum penarikan adalah Rp500 !",
+    showConfirmButton: true,
+    timer: 5000,
+    confirmButtonColor: "#212635",
+  })
+}
+else if(alert === 'errorNim'){
+  Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Oppss...',
+    text: "Nim hanya boleh diisikan dengan angka!",
+    showConfirmButton: true,
+    timer: 5000,
+    confirmButtonColor: "#212635",
+  })
+}
 
 $('#logout').on('click', function () {
   Swal.fire({

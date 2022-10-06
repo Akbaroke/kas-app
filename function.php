@@ -8,7 +8,6 @@ date_default_timezone_set("Asia/Jakarta");
 function edit($data){
   global $conn;
 
-  $nama = htmlspecialchars(stripslashes($data["nama"]));
   $id = $_SESSION["id"];
 
   $no_wa = valNohp();
@@ -16,7 +15,7 @@ function edit($data){
     return false;
   }
   
-  mysqli_query($conn, "UPDATE akun SET nama='$nama', no_wa='$no_wa' WHERE id='$id'");
+  mysqli_query($conn, "UPDATE akun SET no_wa='$no_wa' WHERE id='$id'");
   return mysqli_affected_rows($conn);
 }
 
@@ -26,6 +25,13 @@ function editInfouser($data){
   $nama = htmlspecialchars(stripslashes($data["nama"]));
   $no_wa = htmlspecialchars(strtolower(stripslashes($data["no_wa"])));
   $id = htmlspecialchars(strtolower(stripslashes($data["id_user"])));
+
+  // validasi nama
+  if(!preg_match("/^[a-zA-Z0-9]*$/", $nama)){
+    echo "<div class='alert' data-alert='errorNama'></div>";
+    // Nama hanya boleh menggunakan Huruf dan angka
+    return false;
+  }
 
   // validasi no_wa
   $no_wa = valNohp();
@@ -45,6 +51,21 @@ function editInfouserSuper($data){
   $no_wa = htmlspecialchars(strtolower(stripslashes($data["no_wa"])));
   $id = htmlspecialchars(strtolower(stripslashes($data["id_user"])));
   $role = htmlspecialchars(stripslashes($data["role"]));
+
+  // validasi nama
+  if(!preg_match("/^[a-zA-Z0-9]*$/", $nama)){
+    echo "<div class='alert' data-alert='errorNama'></div>";
+    // Nama hanya boleh menggunakan Huruf dan angka
+    return false;
+  }
+
+  // validasi nim
+  if(!preg_match("/^[0-9]*$/", $nim)){
+    echo "<div class='alert' data-alert='errorNim'></div>";
+    // Nim hanya boleh diisikan dengan angka
+    return false;
+  }
+
 
   // validasi no_wa
   $no_wa = valNohp();
@@ -137,6 +158,13 @@ function verifikasi($data){
   $nama = htmlspecialchars($data["nama"]);
   $time = date("H:i - d/m/Y");
 
+  // validasi nama
+  if(!preg_match("/^[a-zA-Z0-9]*$/", $nama)){
+    echo "<div class='alert' data-alert='errorNama'></div>";
+    // Nomor hanya boleh menggunakan angka dan diawali simbol +
+    return false;
+  }
+
   // get tgl_tagihan
   $row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM list_tunggakan WHERE id_akun='$id' AND id='$id_tunggakan' "));
   $tgl_tagihan = $row['tanggal_tagihan'];
@@ -219,6 +247,25 @@ function tarikSaldo($data){
     return false;
   }
 
+  // validasi minimal penarikan
+  if($nominal <= 499){
+    echo "<div class='alert' data-alert='errorMinimalPenarikan'></div>";
+    return false;
+  }
+
+  // validasi nama
+  if(!preg_match("/^[a-zA-Z0-9]*$/", $ket)){
+    echo "<div class='alert' data-alert='errorKet1'></div>";
+    // Keterangan hanya boleh menggunakan Huruf dan Angka!
+    return false;
+  }
+  $jumlah_ket = strlen(substr($ket, 3));
+  if ($jumlah_ket <= 8) {
+    echo "<div class='alert' data-alert='errorKet2'></div>";
+    // keterangan harus berupa kata min.8 huruf!
+    return false;
+  }
+
   // ambil data saldo awal
   $tb_total = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM total WHERE id=1"));
   
@@ -272,14 +319,30 @@ function valNohp(){
   if (!preg_match("/^[0-9|(\+|)]*$/", $handphone) OR strlen(strpos($handphone, "+", 1)) > 0) {
     echo "<div class='alert' data-alert='errorNohp1'></div>";
     // Nomor hanya boleh menggunakan angka dan diawali simbol +
+    return false;
   }
   else if (substr($handphone, 0, 3) != "+62" ) {
     echo "<div class='alert' data-alert='errorNohp2'></div>";
     // Nomor harus diawali dengan kode negara +62
+    return false;
   }
   else if (substr($handphone, 3, 1) == "0" ) {
     echo "<div class='alert' data-alert='errorNohp3'></div>";
     // Nomor tidak boleh diikuti dengan angka 0 setelah kode negara
+    return false;
+  }
+  
+  $jumlah_digit_handphone = strlen(substr($handphone, 3));
+  
+  if ($jumlah_digit_handphone <= 11) {
+    echo "<div class='alert' data-alert='errorNohp4'></div>";
+    // nomor handphone tidak boleh kurang dari 11 digit
+    return false;
+  }
+  else if ($jumlah_digit_handphone >= 13) {
+    echo "<div class='alert' data-alert='errorNohp5'></div>";
+    // nomor handphone tidak boleh lebih dari dari 12 digit
+    return false;
   }
   return $handphone;
 }
