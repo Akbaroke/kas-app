@@ -72,7 +72,7 @@ else if(alert === 'succesEdit'){
   })
   setTimeout(function(){
     location.reload();
-  },3000);
+  },2000);
 }
 else if(alert === 'successVerif'){
   Swal.fire({

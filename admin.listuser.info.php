@@ -57,11 +57,11 @@ if($role_user == 'admin' OR $role_user == 'superadmin'){
               <a href="<?=$profil["foto"]?>" data-lightbox="work"><img class="fotoProfil" src="<?=$profil["foto"]?>" width="75"></a>
               <h2><?=strtolower($profil["nama"])?></h2>
             </div>
-            <form action="" method="post" autocomplete="off" required >
+            <form action="" method="post" autocomplete="off">
               <input style="display: none;" type="text" name="id_user" value="<?=$id_user?>" readonly >
               <div>
                 <label for="nim">NIM :</label>
-                <input style="background-color: #909090; border:1px solid #fff;" type="text" name="nim" value="<?=$profil["nim"]?>" readonly >
+                <input style="background-color: #909090; border:1px solid #fff;" type="text" name="nim" value="<?=$profil["nim"]?>" required >
               </div>
               <div>
                 <label for="nama">Nama :</label>
@@ -97,7 +97,7 @@ if($role_user == 'admin' OR $role_user == 'superadmin'){
               <input style="display: none;" type="text" name="id_user" value="<?=$id_user?>" readonly >
               <div>
                 <label for="nim">NIM :</label>
-                <input type="text" name="nim" value="<?=$profil["nim"]?>" required>
+                <input type="text" name="nim" value="<?=$profil["nim"]?>" readonly>
               </div>
               <div>
                 <label for="nama">Nama :</label>

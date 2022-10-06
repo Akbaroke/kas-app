@@ -9,10 +9,15 @@ function edit($data){
   global $conn;
 
   $id = $_SESSION["id"];
+  $no_wa = htmlspecialchars(strtolower(stripslashes($data["no_wa"])));
+  
 
-  $no_wa = valNohp();
-  if (!$no_wa) {
-    return false;
+  if(!($no_wa === "")){
+    // validasi no_wa
+    $no_wa = valNohp();
+    if (!$no_wa) {
+      return false;
+    }
   }
   
   mysqli_query($conn, "UPDATE akun SET no_wa='$no_wa' WHERE id='$id'");
@@ -33,10 +38,12 @@ function editInfouser($data){
     return false;
   }
 
-  // validasi no_wa
-  $no_wa = valNohp();
-  if (!$no_wa) {
-    return false;
+  if(!($no_wa === "")){
+    // validasi no_wa
+    $no_wa = valNohp();
+    if (!$no_wa) {
+      return false;
+    }
   }
   
   mysqli_query($conn, "UPDATE akun SET nama='$nama', no_wa='$no_wa' WHERE id='$id'");
@@ -52,13 +59,6 @@ function editInfouserSuper($data){
   $id = htmlspecialchars(strtolower(stripslashes($data["id_user"])));
   $role = htmlspecialchars(stripslashes($data["role"]));
 
-  // validasi nama
-  if(!preg_match("/^[a-zA-Z0-9]*$/", $nama)){
-    echo "<div class='alert' data-alert='errorNama'></div>";
-    // Nama hanya boleh menggunakan Huruf dan angka
-    return false;
-  }
-
   // validasi nim
   if(!preg_match("/^[0-9]*$/", $nim)){
     echo "<div class='alert' data-alert='errorNim'></div>";
@@ -66,11 +66,12 @@ function editInfouserSuper($data){
     return false;
   }
 
-
-  // validasi no_wa
-  $no_wa = valNohp();
-  if (!$no_wa) {
-    return false;
+  if(!($no_wa === "")){
+    // validasi no_wa
+    $no_wa = valNohp();
+    if (!$no_wa) {
+      return false;
+    }
   }
   
   mysqli_query($conn, "UPDATE akun SET nim='$nim', nama='$nama', role='$role', no_wa='$no_wa' WHERE id='$id'");
