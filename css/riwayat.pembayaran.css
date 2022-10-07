@@ -49,7 +49,7 @@
 
 .con-cardData{
   max-width: 312px;
-  max-height: 290px;
+  max-height: max-content;
   margin-top: 10px;
   cursor: pointer;
 }
