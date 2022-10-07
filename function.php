@@ -335,7 +335,7 @@ function valNohp(){
   
   $jumlah_digit_handphone = strlen(substr($handphone, 3));
   
-  if ($jumlah_digit_handphone <= 11) {
+  if ($jumlah_digit_handphone <= 9) {
     echo "<div class='alert' data-alert='errorNohp4'></div>";
     // nomor handphone tidak boleh kurang dari 11 digit
     return false;
