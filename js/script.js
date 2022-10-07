@@ -86,7 +86,7 @@ else if(alert === 'successVerif'){
   })
   setTimeout(function(){
     window.location.href = 'pembayaran.pending.php';
-  },2000);
+  },1000);
 }
 else if(alert === 'errorUpload1'){
   Swal.fire({

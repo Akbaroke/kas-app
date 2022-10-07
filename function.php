@@ -32,7 +32,7 @@ function editInfouser($data){
   $id = htmlspecialchars(strtolower(stripslashes($data["id_user"])));
 
   // validasi nama
-  if(!preg_match("/^[a-zA-Z0-9]*$/", $nama)){
+  if(!preg_match("/^[a-zA-Z0-9 ]*$/", $nama)){
     echo "<div class='alert' data-alert='errorNama'></div>";
     // Nama hanya boleh menggunakan Huruf dan angka
     return false;
@@ -160,7 +160,7 @@ function verifikasi($data){
   $time = date("H:i - d/m/Y");
 
   // validasi nama
-  if(!preg_match("/^[a-zA-Z0-9]*$/", $nama)){
+  if(!preg_match("/^[a-zA-Z0-9 ]*$/", $nama)){
     echo "<div class='alert' data-alert='errorNama'></div>";
     // Nomor hanya boleh menggunakan angka dan diawali simbol +
     return false;
