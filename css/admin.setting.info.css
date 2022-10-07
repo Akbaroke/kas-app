@@ -145,6 +145,7 @@
   margin-bottom: 0px;
 }
 
+.btn-print,
 .btn-hapus{
   width: 102px;
   height: 28px;
@@ -161,6 +162,12 @@
   margin-top: 30px;
 }
 
+.btn-print{
+  background-color: #08779A;
+  display: block;
+}
+
+.btn-print:hover,
 .btn-hapus:hover{
   transition: .3s;
   transform: scale(1.03);

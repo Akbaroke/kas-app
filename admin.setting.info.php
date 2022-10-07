@@ -95,12 +95,15 @@ while($data = mysqli_fetch_array($tb_akun)) {
             </div>
           <?php
         }
-
-
         if($blm_lunas == $jumlah_user){ ?>
           <div data-id="<?=$id_jadwal_tagihan?>" class="btn-hapus">
             Hapus
           </div>
+        <?php
+        }else{?>
+          <a href="pdf.php?id=<?=$id_jadwal_tagihan?>" class="btn-print">
+            Download
+          </a>
         <?php
         }
         ?>
