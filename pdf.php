@@ -49,6 +49,6 @@ $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
 
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
-$pdf->Output('Data_Laporan_Uangkas_'.$tanggal_laporan.'.pdf', 'I');
+$pdf->Output('Data_Laporan_Uangkas_'.$tanggal_laporan.'.pdf', 'D');
 
 ?>

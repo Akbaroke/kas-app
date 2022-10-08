@@ -254,12 +254,7 @@ function tarikSaldo($data){
     return false;
   }
 
-  // validasi nama
-  if(!preg_match("/^[a-zA-Z0-9]*$/", $ket)){
-    echo "<div class='alert' data-alert='errorKet1'></div>";
-    // Keterangan hanya boleh menggunakan Huruf dan Angka!
-    return false;
-  }
+  // validasi ket
   $jumlah_ket = strlen(substr($ket, 3));
   if ($jumlah_ket <= 8) {
     echo "<div class='alert' data-alert='errorKet2'></div>";
@@ -296,6 +291,14 @@ function depositSaldo($data){
   // validasi nominal harus angka
   if(!preg_match("/^[0-9]*$/", $nominal)){
     echo "<div class='alert' data-alert='errorNominal'></div>";
+  }
+
+  // validasi ket
+  $jumlah_ket = strlen(substr($ket, 3));
+  if ($jumlah_ket <= 8) {
+    echo "<div class='alert' data-alert='errorKet2'></div>";
+    // keterangan harus berupa kata min.8 huruf!
+    return false;
   }
 
   // insert riwayat saldo
