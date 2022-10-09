@@ -70,6 +70,14 @@
   align-items: left;
   margin: 0 auto;
   margin-top: 14px;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.cardHome-2:hover{
+  transition: .3s;
+  transform: scale(1.02);
+  box-shadow: 2px 2px 4px #3a3a3aa6;
 }
 
 .cardHome-2 > h3{

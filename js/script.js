@@ -517,7 +517,7 @@ setInterval(function() {
       $("#admin-aktif").html(data);
     }
   })
-}, 1000)
+}, 500)
 
 setInterval(function() {
   $.ajax({
@@ -526,7 +526,7 @@ setInterval(function() {
       $("#user-aktif").html(data);
     }
   })
-}, 1000)
+}, 500)
 
 setInterval(function () {
   $.ajax({
@@ -534,7 +534,7 @@ setInterval(function () {
     success: function (data) {
     },
   });
-}, 2000);
+}, 500);
 
 
 $('.cardHome-4').on('click',()=>{
@@ -607,10 +607,14 @@ $('.card-listAdmin').on('click',function(){
   window.location.href = 'admin.listuser.info.php?id='+dataId;
 })
 
+// handel klik cardHome-2
+$('.cardHome-2').on('click',function(){
+  window.location.href = 'chatt.php';
+})
+
 // handel klik cardHome-3
 $('.cardHome-3').on('click',function(){
   window.location.href = 'dompet.php';
-  $(".container3 > #back").attr("href", "index.php");
 })
 
 // handel klik Verifikasi Pembayaran
@@ -651,3 +655,69 @@ function handleFileSelect(e) {
   });
 }
 
+
+function cekInput(){
+  let inputan = document.getElementById('textbox');
+  if(inputan.selectionStart === 0 && window.event.code === "Space"){
+    window.event.preventDefault();
+  }
+}
+
+
+$('#textbox').on('keypress', function (e) {
+if(e.which === 13){
+    let value = $(this).val();
+    $.ajax({
+      type: "POST",
+      url: "kirim-pesan.php",
+      data: "pesan="+value
+    })
+    $(this).val('');
+    setTimeout(function(){
+      let textPesan = document.getElementById('textPesan');
+      textPesan.scrollTop = textPesan.scrollHeight;
+    },500);
+  }
+});
+
+$('#btn-kirim').on('click',()=>{
+  let input = $('#textbox')
+  let value = $(input).val();
+  $.ajax({
+    type: "POST",
+    url: "kirim-pesan.php",
+    data: "pesan="+value
+  })
+  $(input).val('');
+  // $('#textPesan').animate({scrollTop: document.body.scrollHeight},"slow");
+  setTimeout(function(){
+    let textPesan = document.getElementById('textPesan');
+    textPesan.scrollTop = textPesan.scrollHeight;
+  },500);
+})
+
+setInterval(function () {
+  $.ajax({
+    url: 'cekPesanBaru.php',
+    success: function (data) {
+      $('#textPesan').html(data);
+    },
+  });
+}, 500);
+
+setInterval(function() {
+  $.ajax({
+    url: "cekOnlineChatt.php",
+    success: function(data) {
+      $("#count-online").html(data);
+    }
+  })
+}, 500)
+setInterval(function() {
+  $.ajax({
+    url: "cekOnlineChattProfil.php",
+    success: function(data) {
+      $(".profil-online").html(data);
+    }
+  })
+}, 500)
