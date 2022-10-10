@@ -37,34 +37,34 @@ if(isset($_POST["verifikasi"])){
             <li>Pembayaran Menggunakan DANA :</li>
             <p>Cara pembayaran menggunakan Dana yaitu dengan transfer uang pembayaran ke nomor tujuan yang telah kami sediakan. Lalu Screenshoot bukti transfer dan lakukan pengisian form verifikasi pembayaran serta upload buktinya.</p>
           </div>
-          <div class="tujuan">
-            <div>
-              <p>No.Tujuan Dana</p>
-              <p> : </p>
-              <p class="nmr">081310725348</p>
-            </div>
-            <div>
-              <p>Nominal Tagihan</p>
-              <p>:</p>
-              <p class="hrg">Rp <?= number_format($row['nominal'], 0, ',', '.'); ?></p>
-            </div>
-          </div>
+          <table class="tujuan">
+            <tr>
+              <td>No.Tujuan Dana</td>
+              <td> : </td>
+              <td class="nmr">081310725348 <span id="copy-nomer"><i class="fa-regular fa-clipboard"></i></span></td>
+            </tr>
+            <tr>
+              <td>Nominal Tagihan</td>
+              <td>:</td>
+              <td class="hrg">Rp <?= number_format($row['nominal'], 0, ',', '.'); ?></td>
+            </tr>
+          </table>
           <div class="cara">
             <li>Pembayaran Menggunakan CASH / Langsung :</li>
             <p>Cara pembayaran menggunakan Cash yaitu dengan langsung menemui admin yang bersangkutan dan memberikan uang pembayaran yang telah di tetapkan. Lalu foto bukti penyerahan uangnya dan lakukan pengisian form verifikasi pembayaran serta upload buktinya.</p>
           </div>
-          <div class="tujuan">
-            <div>
-              <p>Wa. Admin</p>
-              <p>:</p>
-              <p class="nmr">081310725348</p>
-            </div>
-            <div>
-              <p>Nominal Tagihan</p>
-              <p>:</p>
-              <p class="hrg">Rp <?= number_format($row['nominal'], 0, ',', '.'); ?></p>
-            </div>
-          </div>
+          <table class="tujuan">
+            <tr>
+              <td>Hub. Admin</td>
+              <td>:</td>
+              <td class="nmr">Sava <a class="link-wa" href="https://wa.me/+62895345747783" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></td>
+            </tr>
+            <tr>
+              <td>Nominal Tagihan</td>
+              <td>:</td>
+              <td class="hrg">Rp <?= number_format($row['nominal'], 0, ',', '.'); ?></td>
+            </tr>
+          </table>
           <a class="btn-verif">Verifikasi Pembayaran</a>
         </div>
       </div>

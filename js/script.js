@@ -689,7 +689,6 @@ $('#btn-kirim').on('click',()=>{
     data: "pesan="+value
   })
   $(input).val('');
-  // $('#textPesan').animate({scrollTop: document.body.scrollHeight},"slow");
   setTimeout(function(){
     let textPesan = document.getElementById('textPesan');
     textPesan.scrollTop = textPesan.scrollHeight;
@@ -721,3 +720,25 @@ setInterval(function() {
     }
   })
 }, 500)
+
+
+// copy nomer
+$("#copy-nomer").click(function () { 
+  const nomer = "081310725348";
+  const textArea = document.createElement("textarea");
+  textArea.value = nomer;
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  try {
+    document.execCommand('copy');
+  } catch (err) {
+    console.error('Unable to copy to clipboard', err);
+  }
+  document.body.removeChild(textArea);
+
+  $(this).html('<i class="fa-solid fa-clipboard-check"></i>');
+  setTimeout(function(){
+    $("#copy-nomer").html('<i class="fa-regular fa-clipboard"></i>');
+  },5000);
+});

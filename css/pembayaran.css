@@ -82,29 +82,42 @@
 }
 
 .card-Carabayar > .con-cara > .tujuan{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  text-align: start;
   gap: 5px;
+  margin-left: 40px;
   margin-top: 10px;
   margin-bottom: 30px;
 }
 
-.card-Carabayar > .con-cara > .tujuan > div{
+.card-Carabayar > .con-cara > .tujuan td{
   color: #fff;
   font-size: 12px;
   font-weight: 500;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  gap: 10px;
+}
+.card-Carabayar > .con-cara > .tujuan td:nth-child(2){
+  padding: 0 15px;
 }
 
 .card-Carabayar > .con-cara > .tujuan .nmr {
   color: #00E4FF;
   text-align: start;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }
+
+.card-Carabayar > .con-cara > .tujuan .link-wa{
+  color: #089A7C;
+  font-size: 14px;
+  position: relative;
+  top: -1px;
+}
+
+.card-Carabayar > .con-cara > .tujuan #copy-nomer{
+  color: #fff;
+  cursor: pointer;
+}
+
 
 .card-Carabayar > .con-cara > .tujuan .hrg {
   color: #EA5455;
