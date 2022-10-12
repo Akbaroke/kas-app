@@ -70,7 +70,7 @@
 
 .layar-pesan{
   width: 100%;
-  min-height: 80vh;
+  height: 80vh;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -81,12 +81,12 @@
 }
 @media(max-width:500px){
   .layar-pesan{
-    min-height: 70vh;
+    height: 70vh;
   }
 }
 @media(max-width:400px){
   .layar-pesan{
-    min-height: 65vh;
+    height: 65vh;
   }
 }
 
