@@ -100,10 +100,15 @@
 .card-listRiwayat > div > div > h4,
 .card-listJadwal > div > div > h4,
 .card-listVerif > div > div > h4{
+  display: block;
+  max-width: 130px;
+  height: 15px;
+  overflow: hidden;
   font-family: 'Roboto', sans-serif;
-  color: #000;
+  text-align: left;
   font-size: 13px;
   font-weight: 500;
+  color: #000;
   text-transform: capitalize;
 }
 
@@ -119,11 +124,42 @@
 .card-listRiwayat > p,
 .card-listJadwal > p,
 .card-listVerif > p{
+  display: block;
+  height: max-content;
+  width: max-content;
   font-size: 10px;
   font-weight: 500;
   color: #7E7E7E;
   position: relative;
   bottom: -28px;
+}
+.card-listVerif > .info-list > p{
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  height: max-content;
+  width: max-content;
+  font-size: 10px;
+  font-weight: 500;
+  color: #7E7E7E;
+  position: relative;
+  bottom: 0;
+}
+
+.card-listVerif > .info-list > .label-metodePem{
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
+  padding: 2px 10px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.card-listVerif > .info-list{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
 }
 
 #buat-tagihan{

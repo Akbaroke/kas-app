@@ -28,13 +28,13 @@ ob_start();
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/login.css">
   <link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="css/profil.css">
+  <link rel="stylesheet" href="css/profil.css?updated=18102022">
   <link rel="stylesheet" href="css/statusPembayaran.css">
   <link rel="stylesheet" href="css/list.tung.css">
   <link rel="stylesheet" href="css/pembayaran.css">
   <link rel="stylesheet" href="css/pending.css">
   <link rel="stylesheet" href="css/admin.css">
-  <link rel="stylesheet" href="css/admin.verifikasi.list.css">
+  <link rel="stylesheet" href="css/admin.verifikasi.list.css?updated=18102022">
   <link rel="stylesheet" href="css/admin.setting.tambah.css">
   <link rel="stylesheet" href="css/admin.setting.info.css">
   <link rel="stylesheet" href="css/admin.listuser.css">

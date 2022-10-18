@@ -37,7 +37,16 @@ unset($_SESSION["verifikasi"]);
                   <p>Rp <?= number_format($data['nominal'], 0, ',', '.'); ?></p>
                 </div>
               </div>
-              <p><?=$data['time']?></p>
+              <div class='info-list'>
+                <?php
+                if($data['metode_pem'] == 'dana'){
+                  ?><div style='background-color: #0F87DD;' class="label-metodePem">dana</div><?php
+                }else{
+                  ?><div style='background-color: #64AB2B;' class="label-metodePem">cash</div><?php
+                }
+                ?>
+                <p><?=$data['time']?></p>
+              </div>
             </div>
         <?php $i++; }
         }?>
