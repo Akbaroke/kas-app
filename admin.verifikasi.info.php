@@ -56,7 +56,13 @@ $row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM riwayat_pembayaran 
           <p><?=$row['nama_pengirim']?></p>
           <p><?=$row['tgl_tagihan']?></p>
           <p><?=$row['time']?></p>
-          <a href="img/buktiPembayaran/<?=$row['bukti']?>" data-lightbox="work"><img  src="img/buktiPembayaran/<?=$row['bukti']?>" width="100" style="border-radius: 5px;"></a>
+          <a href="img/buktiPembayaran/<?php 
+          if($row['bukti'] == ''){
+            echo 'kosong.jpg';
+          }else{
+            echo $row['bukti'];
+          }
+          ?>" data-lightbox="work"><img  src="img/buktiPembayaran/<?=$row['bukti']?>" width="100" style="border-radius: 5px;"></a>
         </div>
       </div>
       <div id="btn-verif">

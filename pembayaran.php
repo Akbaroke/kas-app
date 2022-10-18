@@ -15,6 +15,8 @@ $row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM list_tunggakan WHER
 
 if(isset($_POST["verifikasi"])){
   verifikasi($_POST);
+}else if(isset($_POST["verifikasiCash"])){
+  verifikasiCash($_POST);
 }
 
 
@@ -93,7 +95,7 @@ if(isset($_POST["verifikasi"])){
             <input type="file" name="foto" id="img-bukti" required >
           </div>
           <div id="selectedBanner"></div>
-          <button type="submit" name="verifikasi">
+          <button type="submit" name="verifikasi" id="verif-btn">
               <span>Simpan</span>
           </button>
         </form>

@@ -185,6 +185,37 @@ function verifikasi($data){
 }
 
 
+function verifikasiCash($data){
+  global $conn, $id;
+  
+  // ambil data dari tiap elemen dalam form
+  $id_tunggakan = htmlspecialchars($data["id_tunggakan"]);
+  $metode = htmlspecialchars($data["metode"]);
+  $nama = htmlspecialchars($data["nama"]);
+  $time = date("H:i - d/m/Y");
+
+  // validasi nama
+  if(!preg_match("/^[a-zA-Z0-9 ]*$/", $nama)){
+    echo "<div class='alert' data-alert='errorNama'></div>";
+    // Nomor hanya boleh menggunakan angka dan diawali simbol +
+    return false;
+  }
+
+  // get tgl_tagihan
+  $row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM list_tunggakan WHERE id_akun='$id' AND id='$id_tunggakan' "));
+  $tgl_tagihan = $row['tanggal_tagihan'];
+  $nominal = $row['nominal'];
+
+
+  // query insert data
+  mysqli_query($conn, "INSERT INTO riwayat_pembayaran VALUES ('','$id','$id_tunggakan','$tgl_tagihan','$time','$nominal','$nama','$metode','','pending','','')");
+
+
+  echo "<div class='alert' data-alert='successVerif'></div>";
+}
+
+
+
 function jadwalTagihan($data){
   global $conn;
 

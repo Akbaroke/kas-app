@@ -742,3 +742,17 @@ $("#copy-nomer").click(function () {
     $("#copy-nomer").html('<i class="fa-regular fa-clipboard"></i>');
   },5000);
 });
+
+
+// pembayaran cash tidak perlu melampirkan bukti foto
+$('#metode').on('change', function() {
+  if($(this).val() === 'cash'){
+    $('.bukti').css('display','none');
+    $('#verif-btn').attr("name","verifikasiCash");
+    $('.bukti > input').attr("required",false);
+  }else{
+    $('.bukti').css('display','flex');
+    $('#verif-btn').attr("name","verifikasi");
+    $('.bukti > input').attr("required",true);
+  }
+});
