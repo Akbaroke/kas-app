@@ -68,7 +68,7 @@ while($data = mysqli_fetch_array($tb_akun)) {
       }
       ?>
       </div>
-      <?php if($lunas > 5){
+      <?php if($lunas > 4){
         ?>
           <div class="lihatSemua">
             <i id="iconLihat1" class="fa-solid fa-angle-left"></i>
@@ -112,7 +112,7 @@ while($data = mysqli_fetch_array($tb_akun)) {
       }
       ?>
       </div>
-      <?php if($blm_bayar > 5){
+      <?php if($blm_bayar > 4){
         ?>
           <div class="lihatSemua">
             <i id="iconLihat2" class="fa-solid fa-angle-left"></i>
