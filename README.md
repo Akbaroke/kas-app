@@ -3,4 +3,4 @@
 - jquery
 - mysql
 
-![cunguk.my.id](https://cunguk.my.id/)
+[cunguk.my.id](https://cunguk.my.id/)
