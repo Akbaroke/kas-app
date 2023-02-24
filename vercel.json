@@ -3,13 +3,17 @@
   "builds": [
     {
       "src": "index.php",
-      "use": "now-php@0.1.2"
+      "use": "@vercel/php",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.php"
-    }
-  ]
+  "dependencies": {
+    "php": "7.4.x",
+    "composer": "2.x"
+  },
+  "env": {
+    "COMPOSER_CACHE_DIR": "/vercel/cache/composer"
+  }
 }
